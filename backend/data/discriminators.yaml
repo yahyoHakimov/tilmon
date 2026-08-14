@@ -1,0 +1,237 @@
+# Farqlovchilar — daraxtning har bir tarmoqlanish nuqtasidagi savol.
+#
+# Agar farqlovchining atributi noma'lum bo'lsa, dvigatel SHU YERDA to'xtaydi
+# va kod bermaydi. Bu tizimning asosiy xavfsizlik mexanizmi.
+#
+# `basis` — notes.yaml dagi izoh id lari. Asossiz farqlovchi bo'lishi mumkin
+# emas: test buni tekshiradi.
+
+# ═══ Ildiz ═══════════════════════════════════════════════════════════════
+- id: D_kategoriya
+  at_node: ROOT
+  attribute: mahsulot_kategoriyasi
+  why_uz: "Bo'limni tanlaydi — undan keyingi barcha savollar shunga bog'liq."
+  branches:
+    kiyim: "XI"
+    uskuna: "XVI"
+  basis: [N_XI_bolim, N_XVI_bolim]
+
+# ═══ To'qimachilik: eng muhim farqlovchi ═════════════════════════════════
+- id: D_mato
+  at_node: "XI"
+  attribute: mato_turi
+  why_uz: >-
+    61-bob va 62-bob o'rtasidagi yagona farq. Ko'rinishi bir xil kiyim,
+    lekin boj stavkasi va jarima boshqa. Yetkazib beruvchi ko'rsatmasa,
+    aniqlash shart — taxmin qilib bo'lmaydi.
+  branches:
+    trikotaj: "61"
+    toqima: "62"
+  basis: [N_60_trikotaj_tarif, N_61_sarlavha, N_62_sarlavha]
+
+# ═══ Kiyim turi ══════════════════════════════════════════════════════════
+- id: D_61_tur
+  at_node: "61"
+  attribute: mahsulot_turi
+  why_uz: "61-bob ichida pozitsiyani tanlaydi."
+  branches:
+    koylak_bluzka: "61.KB"
+    futbolka: "6109"
+    sviter: "6110"
+    shim: "61.SH"
+  basis: [N_61_sarlavha, N_6109_sarlavha, N_6110_sarlavha]
+
+- id: D_62_tur
+  at_node: "62"
+  attribute: mahsulot_turi
+  why_uz: >-
+    62-bob ichida pozitsiyani tanlaydi. Diqqat: futbolka va sviter
+    ta'rifi bo'yicha trikotaj buyumlar — ular 62-bobda uchramaydi.
+  branches:
+    koylak_bluzka: "62.KB"
+    shim: "62.SH"
+  basis: [N_62_sarlavha, N_6206_sarlavha, N_6204_sarlavha]
+
+# ═══ Jins ════════════════════════════════════════════════════════════════
+- id: D_61KB_jins
+  at_node: "61.KB"
+  attribute: jins
+  why_uz: "6105 (erkaklar) va 6106 (ayollar) pozitsiyalarini ajratadi."
+  branches:
+    erkak: "6105"
+    ayol: "6106"
+  basis: [N_61_62_izoh_jins, N_6105_sarlavha, N_6106_sarlavha]
+
+- id: D_61SH_jins
+  at_node: "61.SH"
+  attribute: jins
+  why_uz: "6103 (erkaklar) va 6104 (ayollar) pozitsiyalarini ajratadi."
+  branches:
+    erkak: "6103"
+    ayol: "6104"
+  basis: [N_61_62_izoh_jins, N_6103_sarlavha, N_6104_sarlavha]
+
+- id: D_62KB_jins
+  at_node: "62.KB"
+  attribute: jins
+  why_uz: "6205 (erkaklar) va 6206 (ayollar) pozitsiyalarini ajratadi."
+  branches:
+    erkak: "6205"
+    ayol: "6206"
+  basis: [N_61_62_izoh_jins, N_6205_sarlavha, N_6206_sarlavha]
+
+- id: D_62SH_jins
+  at_node: "62.SH"
+  attribute: jins
+  why_uz: "6203 (erkaklar) va 6204 (ayollar) pozitsiyalarini ajratadi."
+  branches:
+    erkak: "6203"
+    ayol: "6204"
+  basis: [N_61_62_izoh_jins, N_6203_sarlavha, N_6204_sarlavha]
+
+# ═══ Tarkib — yakuniy 10-xonali darajani belgilaydi ══════════════════════
+- id: D_6103_tarkib
+  at_node: "6103"
+  attribute: tarkib
+  why_uz: "Yakuniy 10-xonali kodni belgilaydi."
+  branches:
+    paxta: "6103 42 000 0"
+    kimyoviy_tola: "6103 43 000 0"
+  basis: [N_XI_izoh_2]
+
+- id: D_6104_tarkib
+  at_node: "6104"
+  attribute: tarkib
+  why_uz: "Yakuniy 10-xonali kodni belgilaydi."
+  branches:
+    paxta: "6104 62 000 0"
+    kimyoviy_tola: "6104 63 000 0"
+  basis: [N_XI_izoh_2]
+
+- id: D_6105_tarkib
+  at_node: "6105"
+  attribute: tarkib
+  why_uz: "Yakuniy 10-xonali kodni belgilaydi."
+  branches:
+    paxta: "6105 10 000 0"
+    kimyoviy_tola: "6105 20 100 0"
+  basis: [N_XI_izoh_2]
+
+- id: D_6106_tarkib
+  at_node: "6106"
+  attribute: tarkib
+  why_uz: "Yakuniy 10-xonali kodni belgilaydi."
+  branches:
+    paxta: "6106 10 000 0"
+    kimyoviy_tola: "6106 20 000 0"
+    jun: "6106 90 100 0"
+    ipak: "6106 90 300 0"
+  basis: [N_XI_izoh_2]
+
+- id: D_6109_tarkib
+  at_node: "6109"
+  attribute: tarkib
+  why_uz: "Yakuniy 10-xonali kodni belgilaydi."
+  branches:
+    paxta: "6109 10 000 0"
+    kimyoviy_tola: "6109 90 200 0"
+  basis: [N_XI_izoh_2]
+
+- id: D_6110_tarkib
+  at_node: "6110"
+  attribute: tarkib
+  why_uz: "Yakuniy 10-xonali kodni belgilaydi."
+  branches:
+    jun: "6110 11 100 0"
+    paxta: "6110 20 100 0"
+    kimyoviy_tola: "6110 30 100 0"
+  basis: [N_XI_izoh_2]
+
+- id: D_6203_tarkib
+  at_node: "6203"
+  attribute: tarkib
+  why_uz: "Yakuniy 10-xonali kodni belgilaydi."
+  branches:
+    paxta: "6203 42 000 0"
+    kimyoviy_tola: "6203 43 000 0"
+  basis: [N_XI_izoh_2]
+
+- id: D_6204_tarkib
+  at_node: "6204"
+  attribute: tarkib
+  why_uz: "Yakuniy 10-xonali kodni belgilaydi."
+  branches:
+    paxta: "6204 62 000 0"
+    kimyoviy_tola: "6204 63 000 0"
+  basis: [N_XI_izoh_2]
+
+- id: D_6205_tarkib
+  at_node: "6205"
+  attribute: tarkib
+  why_uz: "Yakuniy 10-xonali kodni belgilaydi."
+  branches:
+    paxta: "6205 20 000 0"
+    kimyoviy_tola: "6205 30 000 0"
+  basis: [N_XI_izoh_2]
+
+- id: D_6206_tarkib
+  at_node: "6206"
+  attribute: tarkib
+  why_uz: "Yakuniy 10-xonali kodni belgilaydi."
+  branches:
+    ipak: "6206 10 000 0"
+    jun: "6206 20 000 0"
+    paxta: "6206 30 000 0"
+    kimyoviy_tola: "6206 40 000 0"
+  basis: [N_XI_izoh_2]
+
+# ═══ XVI bo'lim ══════════════════════════════════════════════════════════
+- id: D_uskuna
+  at_node: "XVI"
+  attribute: uskuna_turi
+  why_uz: >-
+    Pozitsiyani tanlaydi. Eng ko'p uchraydigan xato — zaryadlovchi qurilmani
+    telefonning qismi deb tasniflash; u alohida 8504 pozitsiyasiga kiradi.
+  branches:
+    telefon: "8517"
+    kompyuter: "8471"
+    quvvat_manbai: "8504"
+    kabel: "8544"
+  basis: [N_84_85_farq, N_8504_adapter]
+
+- id: D_8471_turi
+  at_node: "8471"
+  attribute: kompyuter_turi
+  why_uz: "10 kg chegarasi qonuniy — massa aniq bo'lishi kerak."
+  branches:
+    portativ: "8471 30 000 0"
+    statsionar: "8471 41 000 0"
+  basis: [N_8471_izoh_portativ]
+
+- id: D_8517_turi
+  at_node: "8517"
+  attribute: telefon_turi
+  why_uz: "Smartfon va oddiy uyali telefon alohida subpozitsiyalarga kiradi."
+  branches:
+    smartfon: "8517 13 000 0"
+    boshqa_uyali: "8517 14 000 0"
+    simli: "8517 18 000 0"
+  basis: [N_8517_smartfon]
+
+- id: D_8504_turi
+  at_node: "8504"
+  attribute: quvvat_turi
+  why_uz: "Statik o'zgartirgich va transformator turli subpozitsiyalarga kiradi."
+  branches:
+    adapter: "8504 40 900 0"
+    transformator: "8504 31 210 0"
+  basis: [N_8504_sarlavha]
+
+- id: D_8544_turi
+  at_node: "8544"
+  attribute: kabel_turi
+  why_uz: "Konnektor mavjudligi subpozitsiyani o'zgartiradi."
+  branches:
+    konnektorli: "8544 42 900 0"
+    konnektorsiz: "8544 49 910 0"
+  basis: [N_8544_sarlavha]

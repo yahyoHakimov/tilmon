@@ -1,0 +1,100 @@
+# Tasnif uchun kerakli xususiyatlar.
+#
+# `values` — YOPIQ ro'yxat. Ekstraktor (4-bosqich) faqat shu qiymatlardan
+# birini qaytara oladi. Boshqa har qanday narsa `None` ga aylanadi va tizim
+# jim turadi. Bu tasodifiy emas: ochiq matn qiymati = nazoratsiz tasnif.
+#
+# `question_uz` — atribut noma'lum bo'lganda foydalanuvchiga beriladigan savol.
+
+mahsulot_kategoriyasi:
+  label_uz: "Mahsulot toifasi"
+  question_uz: "Bu qanday mahsulot — kiyim-kechakmi yoki elektr/mexanik uskunami?"
+  hint_uz: "MVP hozircha faqat shu ikki yo'nalishni qamraydi."
+  values:
+    - kiyim
+    - uskuna
+
+mato_turi:
+  label_uz: "Matoning ishlab chiqarilish usuli"
+  question_uz: >-
+    Mato trikotajmi yoki to'qimami? Trikotaj — ipning halqalaridan hosil
+    qilingan, cho'ziluvchan (futbolka, sviter mato). To'qima — tayyor
+    matodan tikilgan, cho'zilmaydi (klassik ko'ylak mato).
+  hint_uz: >-
+    Yetkazib beruvchidan so'rang yoki matoni cho'zib ko'ring. Bu 61-bob va
+    62-bob o'rtasidagi yagona farq va boj stavkasini belgilaydi.
+  values:
+    - trikotaj
+    - toqima
+
+mahsulot_turi:
+  label_uz: "Kiyim turi"
+  question_uz: "Bu qanday kiyim — ko'ylak/bluzka, futbolka, sviter/jemper yoki shim?"
+  values:
+    - koylak_bluzka
+    - futbolka
+    - sviter
+    - shim
+
+jins:
+  label_uz: "Kim uchun mo'ljallangan"
+  question_uz: "Kiyim erkaklar/o'g'il bolalar uchunmi yoki ayollar/qizlar uchun?"
+  hint_uz: >-
+    Aniq bo'lmasa, tugmalar yo'nalishiga qarang: old qismida chapdan o'ngga
+    yopilsa — erkaklar kiyimi.
+  values:
+    - erkak
+    - ayol
+
+tarkib:
+  label_uz: "Massa bo'yicha ustun material"
+  question_uz: >-
+    Massa bo'yicha qaysi material ustun — paxta, kimyoviy tola
+    (poliester, viskoza, akril), jun yoki ipak?
+  hint_uz: >-
+    Aralash matoda ustun material 50% dan ko'p bo'lishi shart emas —
+    qolganlarining har biridan ko'p bo'lsa yetarli.
+  values:
+    - paxta
+    - kimyoviy_tola
+    - jun
+    - ipak
+
+uskuna_turi:
+  label_uz: "Uskuna turi"
+  question_uz: "Bu qanday qurilma — telefon, kompyuter, quvvat manbai/adapter yoki kabel?"
+  values:
+    - telefon
+    - kompyuter
+    - quvvat_manbai
+    - kabel
+
+telefon_turi:
+  label_uz: "Telefon turi"
+  question_uz: "Bu smartfonmi, oddiy uyali telefonmi yoki simli telefonmi?"
+  values:
+    - smartfon
+    - boshqa_uyali
+    - simli
+
+kompyuter_turi:
+  label_uz: "Kompyuter turi"
+  question_uz: "Bu portativ (noutbuk, planshet, massasi 10 kg dan kam) yoki statsionarmi?"
+  hint_uz: "10 kg chegarasi qonuniy — massani aniq bilish kerak."
+  values:
+    - portativ
+    - statsionar
+
+quvvat_turi:
+  label_uz: "Quvvat qurilmasi turi"
+  question_uz: "Bu statik o'zgartirgichmi (adapter, zaryadlovchi) yoki transformatormi?"
+  values:
+    - adapter
+    - transformator
+
+kabel_turi:
+  label_uz: "Kabel turi"
+  question_uz: "Kabel konnektor (uchlik, razyom) bilan jihozlanganmi yoki yo'q?"
+  values:
+    - konnektorli
+    - konnektorsiz

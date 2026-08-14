@@ -1,0 +1,218 @@
+# ┌──────────────────────────────────────────────────────────────────────────┐
+# │  OGOHLANTIRISH                                                           │
+# │                                                                          │
+# │  Bu fayldagi BARCHA matnlar `status: unverified` — ular rasmiy manbadan  │
+# │  (lex.uz, customs.uz, TN VED rasmiy nashri) so'zma-so'z tasdiqlanmagan.  │
+# │  Matnlar mazmunan Garmonizatsiyalashgan Tizim izohlariga asoslangan,     │
+# │  lekin AYNAN rasmiy tahrir emas.                                        │
+# │                                                                          │
+# │  Ishlab chiqarishga chiqarishdan oldin har bir yozuv rasmiy matn bilan   │
+# │  almashtirilishi va `status: official` qilinishi SHART.                  │
+# │                                                                          │
+# │  Kod o'zgarmaydi — faqat shu fayl almashadi.                            │
+# └──────────────────────────────────────────────────────────────────────────┘
+
+# --- Bo'lim darajasi --------------------------------------------------------
+
+N_XI_bolim:
+  ref: "XI bo'lim (50–63-boblar) sarlavhasi"
+  status: unverified
+  text: >-
+    To'qimachilik materiallari va ulardan tayyorlangan buyumlar.
+
+N_XI_izoh_2:
+  ref: "XI bo'limga izoh, 2(A)-band"
+  status: unverified
+  text: >-
+    Ikki yoki undan ortiq to'qimachilik materialidan iborat buyumlar massa
+    bo'yicha ustun turadigan material bo'yicha tasniflanadi. Ustunlik uchun
+    material qolgan materiallarning har biridan ko'proq bo'lishi yetarli.
+
+N_XVI_bolim:
+  ref: "XVI bo'lim (84–85-boblar) sarlavhasi"
+  status: unverified
+  text: >-
+    Mashinalar, uskunalar va mexanizmlar; elektrotexnika jihozlari; ularning
+    qismlari; ovoz yozish va qayta ijro etish apparaturasi, televizion tasvir
+    va ovozni yozish va qayta ijro etish apparaturasi, ularning qismlari va
+    aksessuarlari.
+
+# --- 60/61/62-boblar: trikotaj va to'qima ----------------------------------
+
+N_60_trikotaj_tarif:
+  ref: "60-bob (trikotaj matolar) — tasnif izohi"
+  status: unverified
+  text: >-
+    Trikotaj mato ipning bir yoki bir nechta halqalar tizimiga birlashtirilishi
+    natijasida hosil qilinadi. To'qima mato esa bir-biriga perpendikulyar
+    joylashgan ikki tizim — asos va arqoq iplarining kesishuvidan hosil bo'ladi.
+
+N_61_sarlavha:
+  ref: "61-bob sarlavhasi"
+  status: unverified
+  text: >-
+    Trikotaj kiyim va kiyim aksessuarlari.
+
+N_61_izoh_1:
+  ref: "61-bobga izoh, 1-band"
+  status: unverified
+  text: >-
+    Ushbu bob faqat tayyor trikotaj buyumlariga nisbatan qo'llaniladi.
+
+N_62_sarlavha:
+  ref: "62-bob sarlavhasi"
+  status: unverified
+  text: >-
+    Kiyim va kiyim aksessuarlari, trikotajdan tashqari.
+
+N_62_izoh_1:
+  ref: "62-bobga izoh, 1-band"
+  status: unverified
+  text: >-
+    Ushbu bob faqat tayyor to'qima matodan tikilgan buyumlarga nisbatan
+    qo'llaniladi va trikotaj buyumlarni qamramaydi.
+
+N_61_62_izoh_jins:
+  ref: "61-bobga izoh, 9-band / 62-bobga izoh, 8-band"
+  status: unverified
+  text: >-
+    Old qismi chapdan o'ngga yopiladigan kiyimlar erkaklar yoki o'g'il bolalar
+    kiyimi sifatida, o'ngdan chapga yopiladiganlari esa ayollar yoki qizlar
+    kiyimi sifatida tasniflanadi. Kiyim qaysi jins uchun mo'ljallanganini
+    aniqlab bo'lmasa, u ayollar yoki qizlar kiyimi sifatida tasniflanadi.
+
+# --- Pozitsiyalar: trikotaj (61) -------------------------------------------
+
+N_6103_sarlavha:
+  ref: "6103 pozitsiyasi sarlavhasi"
+  status: unverified
+  text: >-
+    Erkaklar yoki o'g'il bolalar kostyumlari, komplektlari, kurtkalari,
+    blezerlari, shimlari va shortilari, trikotaj.
+
+N_6104_sarlavha:
+  ref: "6104 pozitsiyasi sarlavhasi"
+  status: unverified
+  text: >-
+    Ayollar yoki qizlar kostyumlari, komplektlari, kurtkalari, blezerlari,
+    ko'ylaklari, yubkalari, shimlari va shortilari, trikotaj.
+
+N_6105_sarlavha:
+  ref: "6105 pozitsiyasi sarlavhasi"
+  status: unverified
+  text: >-
+    Erkaklar yoki o'g'il bolalar ko'ylaklari, trikotaj.
+
+N_6106_sarlavha:
+  ref: "6106 pozitsiyasi sarlavhasi"
+  status: unverified
+  text: >-
+    Ayollar yoki qizlar bluzkalari, bluzalari va bluzka-ko'ylaklari, trikotaj.
+
+N_6109_sarlavha:
+  ref: "6109 pozitsiyasi sarlavhasi"
+  status: unverified
+  text: >-
+    Futbolkalar, maykalar va boshqa ichki kiyimlar, trikotaj.
+
+N_6110_sarlavha:
+  ref: "6110 pozitsiyasi sarlavhasi"
+  status: unverified
+  text: >-
+    Sviterlar, pulloverlar, kardiganlar, jiletlar va shunga o'xshash buyumlar,
+    trikotaj.
+
+# --- Pozitsiyalar: to'qima (62) --------------------------------------------
+
+N_6203_sarlavha:
+  ref: "6203 pozitsiyasi sarlavhasi"
+  status: unverified
+  text: >-
+    Erkaklar yoki o'g'il bolalar kostyumlari, komplektlari, kurtkalari,
+    blezerlari, shimlari va shortilari, trikotajdan tashqari.
+
+N_6204_sarlavha:
+  ref: "6204 pozitsiyasi sarlavhasi"
+  status: unverified
+  text: >-
+    Ayollar yoki qizlar kostyumlari, komplektlari, kurtkalari, blezerlari,
+    ko'ylaklari, yubkalari, shimlari va shortilari, trikotajdan tashqari.
+
+N_6205_sarlavha:
+  ref: "6205 pozitsiyasi sarlavhasi"
+  status: unverified
+  text: >-
+    Erkaklar yoki o'g'il bolalar ko'ylaklari, trikotajdan tashqari.
+
+N_6206_sarlavha:
+  ref: "6206 pozitsiyasi sarlavhasi"
+  status: unverified
+  text: >-
+    Ayollar yoki qizlar bluzkalari, bluzalari va bluzka-ko'ylaklari,
+    trikotajdan tashqari.
+
+# --- XVI bo'lim: 84/85-boblar ----------------------------------------------
+
+N_84_85_farq:
+  ref: "84-bobga izoh, 1-band / 85-bob sarlavhasi — tasnif izohi"
+  status: unverified
+  text: >-
+    84-bob asosan mexanik ishlash prinsipiga asoslangan mashina va
+    qurilmalarni, 85-bob esa elektr mashinalari, elektrotexnika jihozlari va
+    ularning qismlarini qamraydi. Qurilma ikkala bobga tegishli bo'lishi mumkin
+    bo'lganda, uning asosiy vazifasi hal qiluvchi hisoblanadi.
+
+N_8471_sarlavha:
+  ref: "8471 pozitsiyasi sarlavhasi"
+  status: unverified
+  text: >-
+    Hisoblash mashinalari va ularning bloklari; magnit yoki optik o'qish
+    qurilmalari, ma'lumotlarni kodlangan shaklda ma'lumot tashuvchilarga
+    ko'chirish mashinalari va bunday ma'lumotlarni qayta ishlash mashinalari.
+
+N_8471_izoh_portativ:
+  ref: "8471 30 subpozitsiyasi izohi"
+  status: unverified
+  text: >-
+    8471 30 subpozitsiyasiga massasi 10 kg dan oshmaydigan portativ raqamli
+    hisoblash mashinalari kiradi, ular hech bo'lmaganda markaziy protsessor,
+    klaviatura va displeyni o'z ichiga oladi.
+
+N_8517_sarlavha:
+  ref: "8517 pozitsiyasi sarlavhasi"
+  status: unverified
+  text: >-
+    Telefon apparatlari, uyali aloqa tarmoqlari yoki boshqa simsiz aloqa
+    tarmoqlari uchun telefonlarni ham qo'shgan holda; ovoz, tasvir yoki boshqa
+    ma'lumotlarni uzatish yoki qabul qilish uchun boshqa apparatura.
+
+N_8517_smartfon:
+  ref: "8517 13 subpozitsiyasi izohi"
+  status: unverified
+  text: >-
+    Smartfonlar — uyali aloqa tarmoqlari uchun mo'ljallangan, aloqa
+    vazifasidan tashqari ilovalarni bajaruvchi operatsion tizim bilan
+    jihozlangan telefonlar.
+
+N_8504_sarlavha:
+  ref: "8504 pozitsiyasi sarlavhasi"
+  status: unverified
+  text: >-
+    Elektr transformatorlari, statik o'zgartirgichlar (masalan, to'g'rilagichlar)
+    va induktivlik g'altaklari.
+
+N_8504_adapter:
+  ref: "8504 40 subpozitsiyasi izohi"
+  status: unverified
+  text: >-
+    Zaryadlash qurilmalari va quvvat adapterlari statik o'zgartirgichlar
+    sifatida 8504 40 subpozitsiyasiga kiradi, garchi ular telefon yoki
+    kompyuter bilan birga ishlatilsa ham. Ular tegishli qurilmaning qismi
+    sifatida tasniflanmaydi.
+
+N_8544_sarlavha:
+  ref: "8544 pozitsiyasi sarlavhasi"
+  status: unverified
+  text: >-
+    Izolyatsiyalangan simlar, kabellar va boshqa izolyatsiyalangan elektr
+    o'tkazgichlar, konnektorlar bilan yoki ularsiz.

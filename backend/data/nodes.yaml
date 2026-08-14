@@ -1,0 +1,387 @@
+# Kod daraxti.
+#
+# BARCHA yozuvlar `status: unverified` — kodlar, nomlar va boj stavkalari
+# rasmiy TN VED nashridan tasdiqlanmagan. notes.yaml dagi ogohlantirishni
+# o'qing. Rasmiy ma'lumot olinganda faqat shu fayl almashadi.
+#
+# `is_final: true` — 10 xonali yakuniy kod, deklaratsiyaga yoziladigan.
+# `duty_rate` — foizda, faqat ma'lumot uchun.
+
+# ═══ Ildiz ═══════════════════════════════════════════════════════════════
+- code: ROOT
+  level: ildiz
+  title_uz: "Tovar nomenklaturasi"
+  parent: null
+
+# ═══ XI bo'lim — to'qimachilik ═══════════════════════════════════════════
+- code: "XI"
+  level: bolim
+  title_uz: "To'qimachilik materiallari va ulardan tayyorlangan buyumlar"
+  parent: ROOT
+  note_ids: [N_XI_bolim]
+
+- code: "61"
+  level: bob
+  title_uz: "Trikotaj kiyim va kiyim aksessuarlari"
+  parent: "XI"
+  note_ids: [N_61_sarlavha, N_61_izoh_1]
+
+- code: "62"
+  level: bob
+  title_uz: "Kiyim va kiyim aksessuarlari, trikotajdan tashqari"
+  parent: "XI"
+  note_ids: [N_62_sarlavha, N_62_izoh_1]
+
+# ── 61: ko'ylak / bluzka guruhi ──────────────────────────────────────────
+- code: "61.KB"
+  level: guruh
+  title_uz: "Trikotaj ko'ylaklar va bluzkalar"
+  parent: "61"
+
+- code: "6105"
+  level: pozitsiya
+  title_uz: "Erkaklar yoki o'g'il bolalar ko'ylaklari, trikotaj"
+  parent: "61.KB"
+  note_ids: [N_6105_sarlavha]
+
+- code: "6105 10 000 0"
+  level: yakuniy
+  title_uz: "Erkaklar ko'ylaklari, paxtadan, trikotaj"
+  parent: "6105"
+  is_final: true
+  duty_rate: 10.0
+
+- code: "6105 20 100 0"
+  level: yakuniy
+  title_uz: "Erkaklar ko'ylaklari, kimyoviy tolalardan, trikotaj"
+  parent: "6105"
+  is_final: true
+  duty_rate: 10.0
+
+- code: "6106"
+  level: pozitsiya
+  title_uz: "Ayollar yoki qizlar bluzkalari va bluzka-ko'ylaklari, trikotaj"
+  parent: "61.KB"
+  note_ids: [N_6106_sarlavha]
+
+- code: "6106 10 000 0"
+  level: yakuniy
+  title_uz: "Ayollar bluzkalari, paxtadan, trikotaj"
+  parent: "6106"
+  is_final: true
+  duty_rate: 10.0
+
+- code: "6106 20 000 0"
+  level: yakuniy
+  title_uz: "Ayollar bluzkalari, kimyoviy tolalardan, trikotaj"
+  parent: "6106"
+  is_final: true
+  duty_rate: 10.0
+
+- code: "6106 90 100 0"
+  level: yakuniy
+  title_uz: "Ayollar bluzkalari, jundan, trikotaj"
+  parent: "6106"
+  is_final: true
+  duty_rate: 10.0
+
+- code: "6106 90 300 0"
+  level: yakuniy
+  title_uz: "Ayollar bluzkalari, ipakdan, trikotaj"
+  parent: "6106"
+  is_final: true
+  duty_rate: 10.0
+
+# ── 61: shim guruhi ──────────────────────────────────────────────────────
+- code: "61.SH"
+  level: guruh
+  title_uz: "Trikotaj shimlar va shortilar"
+  parent: "61"
+
+- code: "6103"
+  level: pozitsiya
+  title_uz: "Erkaklar yoki o'g'il bolalar shimlari va shortilari, trikotaj"
+  parent: "61.SH"
+  note_ids: [N_6103_sarlavha]
+
+- code: "6103 42 000 0"
+  level: yakuniy
+  title_uz: "Erkaklar shimlari, paxtadan, trikotaj"
+  parent: "6103"
+  is_final: true
+  duty_rate: 10.0
+
+- code: "6103 43 000 0"
+  level: yakuniy
+  title_uz: "Erkaklar shimlari, sintetik tolalardan, trikotaj"
+  parent: "6103"
+  is_final: true
+  duty_rate: 10.0
+
+- code: "6104"
+  level: pozitsiya
+  title_uz: "Ayollar yoki qizlar shimlari va shortilari, trikotaj"
+  parent: "61.SH"
+  note_ids: [N_6104_sarlavha]
+
+- code: "6104 62 000 0"
+  level: yakuniy
+  title_uz: "Ayollar shimlari, paxtadan, trikotaj"
+  parent: "6104"
+  is_final: true
+  duty_rate: 10.0
+
+- code: "6104 63 000 0"
+  level: yakuniy
+  title_uz: "Ayollar shimlari, sintetik tolalardan, trikotaj"
+  parent: "6104"
+  is_final: true
+  duty_rate: 10.0
+
+# ── 61: futbolka va sviter ───────────────────────────────────────────────
+- code: "6109"
+  level: pozitsiya
+  title_uz: "Futbolkalar, maykalar va boshqa ichki kiyimlar, trikotaj"
+  parent: "61"
+  note_ids: [N_6109_sarlavha]
+
+- code: "6109 10 000 0"
+  level: yakuniy
+  title_uz: "Futbolkalar, paxtadan, trikotaj"
+  parent: "6109"
+  is_final: true
+  duty_rate: 10.0
+
+- code: "6109 90 200 0"
+  level: yakuniy
+  title_uz: "Futbolkalar, kimyoviy tolalardan, trikotaj"
+  parent: "6109"
+  is_final: true
+  duty_rate: 10.0
+
+- code: "6110"
+  level: pozitsiya
+  title_uz: "Sviterlar, pulloverlar, kardiganlar, jiletlar, trikotaj"
+  parent: "61"
+  note_ids: [N_6110_sarlavha]
+
+- code: "6110 11 100 0"
+  level: yakuniy
+  title_uz: "Sviterlar, jundan, trikotaj"
+  parent: "6110"
+  is_final: true
+  duty_rate: 10.0
+
+- code: "6110 20 100 0"
+  level: yakuniy
+  title_uz: "Sviterlar, paxtadan, trikotaj"
+  parent: "6110"
+  is_final: true
+  duty_rate: 10.0
+
+- code: "6110 30 100 0"
+  level: yakuniy
+  title_uz: "Sviterlar, kimyoviy tolalardan, trikotaj"
+  parent: "6110"
+  is_final: true
+  duty_rate: 10.0
+
+# ── 62: ko'ylak / bluzka guruhi ──────────────────────────────────────────
+- code: "62.KB"
+  level: guruh
+  title_uz: "To'qima ko'ylaklar va bluzkalar"
+  parent: "62"
+
+- code: "6205"
+  level: pozitsiya
+  title_uz: "Erkaklar yoki o'g'il bolalar ko'ylaklari, trikotajdan tashqari"
+  parent: "62.KB"
+  note_ids: [N_6205_sarlavha]
+
+- code: "6205 20 000 0"
+  level: yakuniy
+  title_uz: "Erkaklar ko'ylaklari, paxtadan, to'qima"
+  parent: "6205"
+  is_final: true
+  duty_rate: 10.0
+
+- code: "6205 30 000 0"
+  level: yakuniy
+  title_uz: "Erkaklar ko'ylaklari, kimyoviy tolalardan, to'qima"
+  parent: "6205"
+  is_final: true
+  duty_rate: 10.0
+
+- code: "6206"
+  level: pozitsiya
+  title_uz: "Ayollar yoki qizlar bluzkalari va bluzka-ko'ylaklari, trikotajdan tashqari"
+  parent: "62.KB"
+  note_ids: [N_6206_sarlavha]
+
+- code: "6206 10 000 0"
+  level: yakuniy
+  title_uz: "Ayollar bluzkalari, ipakdan, to'qima"
+  parent: "6206"
+  is_final: true
+  duty_rate: 10.0
+
+- code: "6206 20 000 0"
+  level: yakuniy
+  title_uz: "Ayollar bluzkalari, jundan, to'qima"
+  parent: "6206"
+  is_final: true
+  duty_rate: 10.0
+
+- code: "6206 30 000 0"
+  level: yakuniy
+  title_uz: "Ayollar bluzkalari, paxtadan, to'qima"
+  parent: "6206"
+  is_final: true
+  duty_rate: 10.0
+
+- code: "6206 40 000 0"
+  level: yakuniy
+  title_uz: "Ayollar bluzkalari, kimyoviy tolalardan, to'qima"
+  parent: "6206"
+  is_final: true
+  duty_rate: 10.0
+
+# ── 62: shim guruhi ──────────────────────────────────────────────────────
+- code: "62.SH"
+  level: guruh
+  title_uz: "To'qima shimlar va shortilar"
+  parent: "62"
+
+- code: "6203"
+  level: pozitsiya
+  title_uz: "Erkaklar yoki o'g'il bolalar shimlari, trikotajdan tashqari"
+  parent: "62.SH"
+  note_ids: [N_6203_sarlavha]
+
+- code: "6203 42 000 0"
+  level: yakuniy
+  title_uz: "Erkaklar shimlari, paxtadan, to'qima"
+  parent: "6203"
+  is_final: true
+  duty_rate: 10.0
+
+- code: "6203 43 000 0"
+  level: yakuniy
+  title_uz: "Erkaklar shimlari, sintetik tolalardan, to'qima"
+  parent: "6203"
+  is_final: true
+  duty_rate: 10.0
+
+- code: "6204"
+  level: pozitsiya
+  title_uz: "Ayollar yoki qizlar shimlari, trikotajdan tashqari"
+  parent: "62.SH"
+  note_ids: [N_6204_sarlavha]
+
+- code: "6204 62 000 0"
+  level: yakuniy
+  title_uz: "Ayollar shimlari, paxtadan, to'qima"
+  parent: "6204"
+  is_final: true
+  duty_rate: 10.0
+
+- code: "6204 63 000 0"
+  level: yakuniy
+  title_uz: "Ayollar shimlari, sintetik tolalardan, to'qima"
+  parent: "6204"
+  is_final: true
+  duty_rate: 10.0
+
+# ═══ XVI bo'lim — mashina va elektrotexnika ══════════════════════════════
+- code: "XVI"
+  level: bolim
+  title_uz: "Mashinalar, uskunalar va elektrotexnika jihozlari"
+  parent: ROOT
+  note_ids: [N_XVI_bolim]
+
+- code: "8471"
+  level: pozitsiya
+  title_uz: "Hisoblash mashinalari va ularning bloklari"
+  parent: "XVI"
+  note_ids: [N_8471_sarlavha]
+
+- code: "8471 30 000 0"
+  level: yakuniy
+  title_uz: "Portativ hisoblash mashinalari, massasi 10 kg dan ortiq emas"
+  parent: "8471"
+  is_final: true
+  duty_rate: 0.0
+
+- code: "8471 41 000 0"
+  level: yakuniy
+  title_uz: "Boshqa hisoblash mashinalari (statsionar)"
+  parent: "8471"
+  is_final: true
+  duty_rate: 0.0
+
+- code: "8517"
+  level: pozitsiya
+  title_uz: "Telefon apparatlari va aloqa apparaturasi"
+  parent: "XVI"
+  note_ids: [N_8517_sarlavha]
+
+- code: "8517 13 000 0"
+  level: yakuniy
+  title_uz: "Smartfonlar"
+  parent: "8517"
+  is_final: true
+  duty_rate: 0.0
+
+- code: "8517 14 000 0"
+  level: yakuniy
+  title_uz: "Uyali aloqa tarmoqlari uchun boshqa telefonlar"
+  parent: "8517"
+  is_final: true
+  duty_rate: 0.0
+
+- code: "8517 18 000 0"
+  level: yakuniy
+  title_uz: "Boshqa telefon apparatlari (simli)"
+  parent: "8517"
+  is_final: true
+  duty_rate: 0.0
+
+- code: "8504"
+  level: pozitsiya
+  title_uz: "Elektr transformatorlari va statik o'zgartirgichlar"
+  parent: "XVI"
+  note_ids: [N_8504_sarlavha]
+
+- code: "8504 40 900 0"
+  level: yakuniy
+  title_uz: "Statik o'zgartirgichlar (quvvat adapterlari, zaryadlovchilar)"
+  parent: "8504"
+  is_final: true
+  duty_rate: 5.0
+
+- code: "8504 31 210 0"
+  level: yakuniy
+  title_uz: "Transformatorlar, quvvati 1 kVA dan ortiq emas"
+  parent: "8504"
+  is_final: true
+  duty_rate: 5.0
+
+- code: "8544"
+  level: pozitsiya
+  title_uz: "Izolyatsiyalangan simlar va kabellar"
+  parent: "XVI"
+  note_ids: [N_8544_sarlavha]
+
+- code: "8544 42 900 0"
+  level: yakuniy
+  title_uz: "Kabellar, konnektorlar bilan jihozlangan, kuchlanish 1000 V dan ortiq emas"
+  parent: "8544"
+  is_final: true
+  duty_rate: 5.0
+
+- code: "8544 49 910 0"
+  level: yakuniy
+  title_uz: "Kabellar, konnektorlarsiz, kuchlanish 1000 V dan ortiq emas"
+  parent: "8544"
+  is_final: true
+  duty_rate: 5.0
