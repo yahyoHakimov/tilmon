@@ -1,0 +1,62 @@
+# Serverdagi umumiy sxema: har bir loyiha /opt/<nom> ichida o'z compose stack'i,
+# hammasi tashqi `proxy` tarmog'iga ulanadi. Gateway nginx (swiftshield-nginx-1)
+# tilmon.uz ni shu konteynerlarga proxy_pass qiladi.
+#
+# Sozlamalar /opt/tilmon/.env dan o'qiladi (namuna: .env.example).
+services:
+  frontend:
+    build: ./web
+    container_name: tilmon_frontend
+    expose:
+      - "80"
+    networks:
+      - proxy
+    restart: unless-stopped
+
+  backend:
+    build: ./backend
+    container_name: tilmon_backend
+    env_file:
+      - .env
+    environment:
+      # DB manzili shu yerda yig'iladi — `db` servis nomi ichki tarmoqdagi host.
+      # Tilmon sync psycopg ishlatadi (asyncpg emas).
+      DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-tilmon}:${POSTGRES_PASSWORD:?POSTGRES_PASSWORD .env da bo'lishi shart}@db:5432/${POSTGRES_DB:-tilmon}
+    depends_on:
+      db:
+        condition: service_healthy
+    expose:
+      - "8000"
+    networks:
+      - proxy
+      - internal
+    restart: unless-stopped
+
+  db:
+    image: postgres:18-alpine
+    container_name: tilmon_db
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-tilmon}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?POSTGRES_PASSWORD .env da bo'lishi shart}
+      POSTGRES_DB: ${POSTGRES_DB:-tilmon}
+    volumes:
+      - tilmon_db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-tilmon} -d ${POSTGRES_DB:-tilmon}"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 20s
+    # DB faqat ichki tarmoqda — tashqaridan ham, proxy tarmog'idan ham ko'rinmaydi.
+    networks:
+      - internal
+    restart: unless-stopped
+
+networks:
+  proxy:
+    external: true
+  internal:
+    driver: bridge
+
+volumes:
+  tilmon_db_data:
