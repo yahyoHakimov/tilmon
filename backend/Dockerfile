@@ -15,6 +15,8 @@ COPY alembic.ini docker-entrypoint.sh ./
 COPY migrations ./migrations
 COPY app ./app
 COPY data ./data
+# Admin CLI: birinchi admin va taklif kodlarini konteyner ichida yaratish uchun.
+COPY scripts ./scripts
 RUN chmod +x docker-entrypoint.sh
 
 EXPOSE 8000
