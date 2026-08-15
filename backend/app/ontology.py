@@ -33,6 +33,11 @@ class LegalNote(BaseModel):
     ref: str  # masalan: "61-bobga izoh, 1-band"
     text: str
     status: str = UNVERIFIED
+    # Matn qayerdan olingan / qayerdan tasdiqlash kerak. `unverified`
+    # yozuvlarni tekshirish ishini aniq maqsadli qiladi: har bir matn
+    # uchun "qaysi hujjatning qaysi joyiga qarash kerak" yozib qo'yiladi.
+    # Batafsil manba ro'yxati: data/VERIFICATION.md
+    source_hint: str = ""
 
 
 class AttributeDef(BaseModel):
@@ -46,6 +51,11 @@ class AttributeDef(BaseModel):
     label_uz: str
     question_uz: str
     values: list[str]
+    # Qiymat -> odam o'qiydigan matn. UI tugmalarida `koylak_bluzka` emas,
+    # "Ko'ylak yoki bluzka" ko'rinishi kerak. Yorliqlar shu yerda turadi,
+    # frontendda emas: yangi qiymat qo'shilganda uni tarjimasiz qoldirib
+    # bo'lmasligi test bilan ta'minlanadi.
+    value_labels: dict[str, str] = Field(default_factory=dict)
     hint_uz: str = ""
 
 

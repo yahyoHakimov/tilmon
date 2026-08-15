@@ -13,6 +13,9 @@ mahsulot_kategoriyasi:
   values:
     - kiyim
     - uskuna
+  value_labels:
+    kiyim: "Kiyim-kechak"
+    uskuna: "Elektr yoki mexanik uskuna"
 
 mato_turi:
   label_uz: "Matoning ishlab chiqarilish usuli"
@@ -26,6 +29,9 @@ mato_turi:
   values:
     - trikotaj
     - toqima
+  value_labels:
+    trikotaj: "Trikotaj — ip halqalaridan to'qilgan, cho'ziluvchan"
+    toqima: "To'qima — tayyor matodan tikilgan, cho'zilmaydi"
 
 mahsulot_turi:
   label_uz: "Kiyim turi"
@@ -35,6 +41,11 @@ mahsulot_turi:
     - futbolka
     - sviter
     - shim
+  value_labels:
+    koylak_bluzka: "Ko'ylak yoki bluzka"
+    futbolka: "Futbolka, mayka"
+    sviter: "Sviter, jemper, kardigan"
+    shim: "Shim yoki shorti"
 
 jins:
   label_uz: "Kim uchun mo'ljallangan"
@@ -45,6 +56,9 @@ jins:
   values:
     - erkak
     - ayol
+  value_labels:
+    erkak: "Erkaklar yoki o'g'il bolalar uchun"
+    ayol: "Ayollar yoki qizlar uchun"
 
 tarkib:
   label_uz: "Massa bo'yicha ustun material"
@@ -59,6 +73,11 @@ tarkib:
     - kimyoviy_tola
     - jun
     - ipak
+  value_labels:
+    paxta: "Paxta"
+    kimyoviy_tola: "Kimyoviy tola (poliester, viskoza, akril)"
+    jun: "Jun"
+    ipak: "Ipak"
 
 uskuna_turi:
   label_uz: "Uskuna turi"
@@ -68,6 +87,11 @@ uskuna_turi:
     - kompyuter
     - quvvat_manbai
     - kabel
+  value_labels:
+    telefon: "Telefon apparati"
+    kompyuter: "Kompyuter yoki noutbuk"
+    quvvat_manbai: "Quvvat manbai, adapter, zaryadlovchi"
+    kabel: "Kabel yoki sim"
 
 telefon_turi:
   label_uz: "Telefon turi"
@@ -76,6 +100,10 @@ telefon_turi:
     - smartfon
     - boshqa_uyali
     - simli
+  value_labels:
+    smartfon: "Smartfon (operatsion tizim bilan)"
+    boshqa_uyali: "Oddiy uyali telefon"
+    simli: "Simli statsionar telefon"
 
 kompyuter_turi:
   label_uz: "Kompyuter turi"
@@ -84,6 +112,9 @@ kompyuter_turi:
   values:
     - portativ
     - statsionar
+  value_labels:
+    portativ: "Portativ — noutbuk, planshet, 10 kg gacha"
+    statsionar: "Statsionar — sistema bloki, server"
 
 quvvat_turi:
   label_uz: "Quvvat qurilmasi turi"
@@ -91,6 +122,9 @@ quvvat_turi:
   values:
     - adapter
     - transformator
+  value_labels:
+    adapter: "Statik o'zgartirgich — adapter, zaryadlovchi"
+    transformator: "Transformator"
 
 kabel_turi:
   label_uz: "Kabel turi"
@@ -98,3 +132,6 @@ kabel_turi:
   values:
     - konnektorli
     - konnektorsiz
+  value_labels:
+    konnektorli: "Konnektor (razyom, uchlik) bilan"
+    konnektorsiz: "Konnektorsiz — g'altakdagi sim"

@@ -1,0 +1,25 @@
+# Sirlar — hech qachon commit qilinmaydi
+.env
+.env.local
+*.key
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.hypothesis/
+*.egg-info/
+dist/
+build/
+
+# Node
+node_modules/
+.vite/
+coverage/
+
+# Muharrir / OS
+.DS_Store
+*.swp
+.idea/
+.vscode/

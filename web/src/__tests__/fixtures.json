@@ -1,0 +1,576 @@
+{
+  "resolved": {
+    "status": "resolved",
+    "attributes": [
+      {
+        "name": "mahsulot_kategoriyasi",
+        "value": "kiyim",
+        "source": "inferred",
+        "evidence_uz": "bluzka"
+      },
+      {
+        "name": "mato_turi",
+        "value": "trikotaj",
+        "source": "stated",
+        "evidence_uz": "trikotaj"
+      },
+      {
+        "name": "mahsulot_turi",
+        "value": "koylak_bluzka",
+        "source": "stated",
+        "evidence_uz": "bluzkasi"
+      },
+      {
+        "name": "jins",
+        "value": "ayol",
+        "source": "stated",
+        "evidence_uz": "ayollar"
+      },
+      {
+        "name": "tarkib",
+        "value": "paxta",
+        "source": "stated",
+        "evidence_uz": "100% paxta"
+      }
+    ],
+    "dropped": [],
+    "conflicts": [],
+    "model_ok": true,
+    "evidence": {
+      "steps": [
+        {
+          "node": "ROOT",
+          "node_title_uz": "Tovar nomenklaturasi",
+          "attribute": "mahsulot_kategoriyasi",
+          "attribute_label_uz": "Mahsulot toifasi",
+          "value": "kiyim",
+          "target": "XI",
+          "target_title_uz": "To'qimachilik materiallari va ulardan tayyorlangan buyumlar",
+          "why_uz": "Bo'limni tanlaydi — undan keyingi barcha savollar shunga bog'liq.",
+          "citations": [
+            {
+              "note_id": "N_XI_bolim",
+              "ref": "XI bo'lim (50–63-boblar) sarlavhasi",
+              "text": "To'qimachilik materiallari va ulardan tayyorlangan buyumlar.",
+              "status": "unverified"
+            },
+            {
+              "note_id": "N_XVI_bolim",
+              "ref": "XVI bo'lim (84–85-boblar) sarlavhasi",
+              "text": "Mashinalar, uskunalar va mexanizmlar; elektrotexnika jihozlari; ularning qismlari; ovoz yozish va qayta ijro etish apparaturasi, televizion tasvir va ovozni yozish va qayta ijro etish apparaturasi, ularning qismlari va aksessuarlari.",
+              "status": "unverified"
+            }
+          ]
+        },
+        {
+          "node": "XI",
+          "node_title_uz": "To'qimachilik materiallari va ulardan tayyorlangan buyumlar",
+          "attribute": "mato_turi",
+          "attribute_label_uz": "Matoning ishlab chiqarilish usuli",
+          "value": "trikotaj",
+          "target": "61",
+          "target_title_uz": "Trikotaj kiyim va kiyim aksessuarlari",
+          "why_uz": "61-bob va 62-bob o'rtasidagi yagona farq. Ko'rinishi bir xil kiyim, lekin boj stavkasi va jarima boshqa. Yetkazib beruvchi ko'rsatmasa, aniqlash shart — taxmin qilib bo'lmaydi.",
+          "citations": [
+            {
+              "note_id": "N_60_trikotaj_tarif",
+              "ref": "60-bob (trikotaj matolar) — tasnif izohi",
+              "text": "Trikotaj mato ipning bir yoki bir nechta halqalar tizimiga birlashtirilishi natijasida hosil qilinadi. To'qima mato esa bir-biriga perpendikulyar joylashgan ikki tizim — asos va arqoq iplarining kesishuvidan hosil bo'ladi.",
+              "status": "unverified"
+            },
+            {
+              "note_id": "N_61_sarlavha",
+              "ref": "61-bob sarlavhasi",
+              "text": "Trikotaj kiyim va kiyim aksessuarlari.",
+              "status": "unverified"
+            },
+            {
+              "note_id": "N_62_sarlavha",
+              "ref": "62-bob sarlavhasi",
+              "text": "Kiyim va kiyim aksessuarlari, trikotajdan tashqari.",
+              "status": "unverified"
+            },
+            {
+              "note_id": "N_61_izoh_1",
+              "ref": "61-bobga izoh, 1-band",
+              "text": "Ushbu bobga faqat mashinada yoki qo'lda to'qilgan tayyor trikotaj buyumlar kiradi.",
+              "status": "unverified"
+            }
+          ]
+        },
+        {
+          "node": "61",
+          "node_title_uz": "Trikotaj kiyim va kiyim aksessuarlari",
+          "attribute": "mahsulot_turi",
+          "attribute_label_uz": "Kiyim turi",
+          "value": "koylak_bluzka",
+          "target": "61.KB",
+          "target_title_uz": "Trikotaj ko'ylaklar va bluzkalar",
+          "why_uz": "61-bob ichida pozitsiyani tanlaydi.",
+          "citations": [
+            {
+              "note_id": "N_61_sarlavha",
+              "ref": "61-bob sarlavhasi",
+              "text": "Trikotaj kiyim va kiyim aksessuarlari.",
+              "status": "unverified"
+            },
+            {
+              "note_id": "N_6109_sarlavha",
+              "ref": "6109 pozitsiyasi sarlavhasi",
+              "text": "Futbolkalar, maykalar va boshqa ichki kiyimlar, trikotaj.",
+              "status": "unverified"
+            },
+            {
+              "note_id": "N_6110_sarlavha",
+              "ref": "6110 pozitsiyasi sarlavhasi",
+              "text": "Sviterlar, pulloverlar, kardiganlar, jiletlar va shunga o'xshash buyumlar, trikotaj.",
+              "status": "unverified"
+            }
+          ]
+        },
+        {
+          "node": "61.KB",
+          "node_title_uz": "Trikotaj ko'ylaklar va bluzkalar",
+          "attribute": "jins",
+          "attribute_label_uz": "Kim uchun mo'ljallangan",
+          "value": "ayol",
+          "target": "6106",
+          "target_title_uz": "Ayollar yoki qizlar bluzkalari va bluzka-ko'ylaklari, trikotaj",
+          "why_uz": "6105 (erkaklar) va 6106 (ayollar) pozitsiyalarini ajratadi.",
+          "citations": [
+            {
+              "note_id": "N_61_62_izoh_jins",
+              "ref": "61-bobga izoh, 9-band / 62-bobga izoh, 8-band",
+              "text": "Old qismi chapdan o'ngga yopiladigan kiyimlar erkaklar yoki o'g'il bolalar kiyimi sifatida, o'ngdan chapga yopiladiganlari esa ayollar yoki qizlar kiyimi sifatida tasniflanadi. Kiyim qaysi jins uchun mo'ljallanganini aniqlab bo'lmasa, u ayollar yoki qizlar kiyimi sifatida tasniflanadi.",
+              "status": "unverified"
+            },
+            {
+              "note_id": "N_6105_sarlavha",
+              "ref": "6105 pozitsiyasi sarlavhasi",
+              "text": "Erkaklar yoki o'g'il bolalar ko'ylaklari, trikotaj.",
+              "status": "unverified"
+            },
+            {
+              "note_id": "N_6106_sarlavha",
+              "ref": "6106 pozitsiyasi sarlavhasi",
+              "text": "Ayollar yoki qizlar bluzkalari, bluzalari va bluzka-ko'ylaklari, trikotaj.",
+              "status": "unverified"
+            }
+          ]
+        },
+        {
+          "node": "6106",
+          "node_title_uz": "Ayollar yoki qizlar bluzkalari va bluzka-ko'ylaklari, trikotaj",
+          "attribute": "tarkib",
+          "attribute_label_uz": "Massa bo'yicha ustun material",
+          "value": "paxta",
+          "target": "6106 10 000 0",
+          "target_title_uz": "Ayollar bluzkalari, paxtadan, trikotaj",
+          "why_uz": "Yakuniy 10-xonali kodni belgilaydi.",
+          "citations": [
+            {
+              "note_id": "N_XI_izoh_2",
+              "ref": "XI bo'limga izoh, 2(A)-band",
+              "text": "Ikki yoki undan ortiq to'qimachilik materialidan iborat buyumlar massa bo'yicha ustun turadigan material bo'yicha tasniflanadi. Ustunlik uchun material qolgan materiallarning har biridan ko'proq bo'lishi yetarli.",
+              "status": "unverified"
+            }
+          ]
+        }
+      ],
+      "rejections": [
+        {
+          "code": "XVI",
+          "title_uz": "Mashinalar, uskunalar va elektrotexnika jihozlari",
+          "attribute": "mahsulot_kategoriyasi",
+          "required_value": "uskuna",
+          "actual_value": "kiyim",
+          "citations": [
+            {
+              "note_id": "N_XI_bolim",
+              "ref": "XI bo'lim (50–63-boblar) sarlavhasi",
+              "text": "To'qimachilik materiallari va ulardan tayyorlangan buyumlar.",
+              "status": "unverified"
+            },
+            {
+              "note_id": "N_XVI_bolim",
+              "ref": "XVI bo'lim (84–85-boblar) sarlavhasi",
+              "text": "Mashinalar, uskunalar va mexanizmlar; elektrotexnika jihozlari; ularning qismlari; ovoz yozish va qayta ijro etish apparaturasi, televizion tasvir va ovozni yozish va qayta ijro etish apparaturasi, ularning qismlari va aksessuarlari.",
+              "status": "unverified"
+            }
+          ]
+        },
+        {
+          "code": "62",
+          "title_uz": "Kiyim va kiyim aksessuarlari, trikotajdan tashqari",
+          "attribute": "mato_turi",
+          "required_value": "toqima",
+          "actual_value": "trikotaj",
+          "citations": [
+            {
+              "note_id": "N_60_trikotaj_tarif",
+              "ref": "60-bob (trikotaj matolar) — tasnif izohi",
+              "text": "Trikotaj mato ipning bir yoki bir nechta halqalar tizimiga birlashtirilishi natijasida hosil qilinadi. To'qima mato esa bir-biriga perpendikulyar joylashgan ikki tizim — asos va arqoq iplarining kesishuvidan hosil bo'ladi.",
+              "status": "unverified"
+            },
+            {
+              "note_id": "N_61_sarlavha",
+              "ref": "61-bob sarlavhasi",
+              "text": "Trikotaj kiyim va kiyim aksessuarlari.",
+              "status": "unverified"
+            },
+            {
+              "note_id": "N_62_sarlavha",
+              "ref": "62-bob sarlavhasi",
+              "text": "Kiyim va kiyim aksessuarlari, trikotajdan tashqari.",
+              "status": "unverified"
+            },
+            {
+              "note_id": "N_62_izoh_1",
+              "ref": "62-bobga izoh, 1-band",
+              "text": "Ushbu bobga 50–56, 58 va 59-boblardagi materiallardan (paxta momig'idan tashqari, lekin kigiz va to'qilmagan materiallarni qo'shgan holda) tayyorlangan erkaklar, ayollar yoki bolalar kiyimi, kiyim aksessuarlari va ularning qismlari kiradi.",
+              "status": "unverified"
+            }
+          ]
+        },
+        {
+          "code": "6109",
+          "title_uz": "Futbolkalar, maykalar va boshqa ichki kiyimlar, trikotaj",
+          "attribute": "mahsulot_turi",
+          "required_value": "futbolka",
+          "actual_value": "koylak_bluzka",
+          "citations": [
+            {
+              "note_id": "N_61_sarlavha",
+              "ref": "61-bob sarlavhasi",
+              "text": "Trikotaj kiyim va kiyim aksessuarlari.",
+              "status": "unverified"
+            },
+            {
+              "note_id": "N_6109_sarlavha",
+              "ref": "6109 pozitsiyasi sarlavhasi",
+              "text": "Futbolkalar, maykalar va boshqa ichki kiyimlar, trikotaj.",
+              "status": "unverified"
+            },
+            {
+              "note_id": "N_6110_sarlavha",
+              "ref": "6110 pozitsiyasi sarlavhasi",
+              "text": "Sviterlar, pulloverlar, kardiganlar, jiletlar va shunga o'xshash buyumlar, trikotaj.",
+              "status": "unverified"
+            }
+          ]
+        },
+        {
+          "code": "6110",
+          "title_uz": "Sviterlar, pulloverlar, kardiganlar, jiletlar, trikotaj",
+          "attribute": "mahsulot_turi",
+          "required_value": "sviter",
+          "actual_value": "koylak_bluzka",
+          "citations": [
+            {
+              "note_id": "N_61_sarlavha",
+              "ref": "61-bob sarlavhasi",
+              "text": "Trikotaj kiyim va kiyim aksessuarlari.",
+              "status": "unverified"
+            },
+            {
+              "note_id": "N_6109_sarlavha",
+              "ref": "6109 pozitsiyasi sarlavhasi",
+              "text": "Futbolkalar, maykalar va boshqa ichki kiyimlar, trikotaj.",
+              "status": "unverified"
+            },
+            {
+              "note_id": "N_6110_sarlavha",
+              "ref": "6110 pozitsiyasi sarlavhasi",
+              "text": "Sviterlar, pulloverlar, kardiganlar, jiletlar va shunga o'xshash buyumlar, trikotaj.",
+              "status": "unverified"
+            }
+          ]
+        },
+        {
+          "code": "61.SH",
+          "title_uz": "Trikotaj shimlar va shortilar",
+          "attribute": "mahsulot_turi",
+          "required_value": "shim",
+          "actual_value": "koylak_bluzka",
+          "citations": [
+            {
+              "note_id": "N_61_sarlavha",
+              "ref": "61-bob sarlavhasi",
+              "text": "Trikotaj kiyim va kiyim aksessuarlari.",
+              "status": "unverified"
+            },
+            {
+              "note_id": "N_6109_sarlavha",
+              "ref": "6109 pozitsiyasi sarlavhasi",
+              "text": "Futbolkalar, maykalar va boshqa ichki kiyimlar, trikotaj.",
+              "status": "unverified"
+            },
+            {
+              "note_id": "N_6110_sarlavha",
+              "ref": "6110 pozitsiyasi sarlavhasi",
+              "text": "Sviterlar, pulloverlar, kardiganlar, jiletlar va shunga o'xshash buyumlar, trikotaj.",
+              "status": "unverified"
+            }
+          ]
+        },
+        {
+          "code": "6105",
+          "title_uz": "Erkaklar yoki o'g'il bolalar ko'ylaklari, trikotaj",
+          "attribute": "jins",
+          "required_value": "erkak",
+          "actual_value": "ayol",
+          "citations": [
+            {
+              "note_id": "N_61_62_izoh_jins",
+              "ref": "61-bobga izoh, 9-band / 62-bobga izoh, 8-band",
+              "text": "Old qismi chapdan o'ngga yopiladigan kiyimlar erkaklar yoki o'g'il bolalar kiyimi sifatida, o'ngdan chapga yopiladiganlari esa ayollar yoki qizlar kiyimi sifatida tasniflanadi. Kiyim qaysi jins uchun mo'ljallanganini aniqlab bo'lmasa, u ayollar yoki qizlar kiyimi sifatida tasniflanadi.",
+              "status": "unverified"
+            },
+            {
+              "note_id": "N_6105_sarlavha",
+              "ref": "6105 pozitsiyasi sarlavhasi",
+              "text": "Erkaklar yoki o'g'il bolalar ko'ylaklari, trikotaj.",
+              "status": "unverified"
+            },
+            {
+              "note_id": "N_6106_sarlavha",
+              "ref": "6106 pozitsiyasi sarlavhasi",
+              "text": "Ayollar yoki qizlar bluzkalari, bluzalari va bluzka-ko'ylaklari, trikotaj.",
+              "status": "unverified"
+            }
+          ]
+        },
+        {
+          "code": "6106 20 000 0",
+          "title_uz": "Ayollar bluzkalari, kimyoviy tolalardan, trikotaj",
+          "attribute": "tarkib",
+          "required_value": "kimyoviy_tola",
+          "actual_value": "paxta",
+          "citations": [
+            {
+              "note_id": "N_XI_izoh_2",
+              "ref": "XI bo'limga izoh, 2(A)-band",
+              "text": "Ikki yoki undan ortiq to'qimachilik materialidan iborat buyumlar massa bo'yicha ustun turadigan material bo'yicha tasniflanadi. Ustunlik uchun material qolgan materiallarning har biridan ko'proq bo'lishi yetarli.",
+              "status": "unverified"
+            }
+          ]
+        },
+        {
+          "code": "6106 90 100 0",
+          "title_uz": "Ayollar bluzkalari, jundan, trikotaj",
+          "attribute": "tarkib",
+          "required_value": "jun",
+          "actual_value": "paxta",
+          "citations": [
+            {
+              "note_id": "N_XI_izoh_2",
+              "ref": "XI bo'limga izoh, 2(A)-band",
+              "text": "Ikki yoki undan ortiq to'qimachilik materialidan iborat buyumlar massa bo'yicha ustun turadigan material bo'yicha tasniflanadi. Ustunlik uchun material qolgan materiallarning har biridan ko'proq bo'lishi yetarli.",
+              "status": "unverified"
+            }
+          ]
+        },
+        {
+          "code": "6106 90 300 0",
+          "title_uz": "Ayollar bluzkalari, ipakdan, trikotaj",
+          "attribute": "tarkib",
+          "required_value": "ipak",
+          "actual_value": "paxta",
+          "citations": [
+            {
+              "note_id": "N_XI_izoh_2",
+              "ref": "XI bo'limga izoh, 2(A)-band",
+              "text": "Ikki yoki undan ortiq to'qimachilik materialidan iborat buyumlar massa bo'yicha ustun turadigan material bo'yicha tasniflanadi. Ustunlik uchun material qolgan materiallarning har biridan ko'proq bo'lishi yetarli.",
+              "status": "unverified"
+            }
+          ]
+        }
+      ],
+      "has_unverified": true,
+      "unverified_note_ids": [
+        "N_XI_bolim",
+        "N_XVI_bolim",
+        "N_60_trikotaj_tarif",
+        "N_61_sarlavha",
+        "N_62_sarlavha",
+        "N_61_izoh_1",
+        "N_6109_sarlavha",
+        "N_6110_sarlavha",
+        "N_61_62_izoh_jins",
+        "N_6105_sarlavha",
+        "N_6106_sarlavha",
+        "N_XI_izoh_2",
+        "N_62_izoh_1"
+      ]
+    },
+    "disclaimer_uz": "Bu javob tavsiya xarakteriga ega va yuridik kuchga ega emas. Yakuniy tasnif javobgarligi deklarantda qoladi. Shubhali holatlarda bojxona organidan dastlabki qaror oling.",
+    "ontology_version": "seed-57n-27izoh-0tasdiq",
+    "data_warning_uz": "Diqqat: javobdagi huquqiy izohlar rasmiy manbadan hali tasdiqlanmagan (sinov ma'lumotlari). Iqtiboslarni rasmiy TN VED nashri bilan solishtiring.",
+    "code": "6106 10 000 0",
+    "title_uz": "Ayollar bluzkalari, paxtadan, trikotaj",
+    "duty_rate": 10.0,
+    "confidence": {
+      "level": "orta",
+      "inferred_attributes": [
+        "mahsulot_kategoriyasi"
+      ]
+    }
+  },
+  "insufficient": {
+    "status": "insufficient",
+    "attributes": [
+      {
+        "name": "mahsulot_kategoriyasi",
+        "value": "kiyim",
+        "source": "inferred",
+        "evidence_uz": "bluzka"
+      },
+      {
+        "name": "mahsulot_turi",
+        "value": "koylak_bluzka",
+        "source": "stated",
+        "evidence_uz": "bluzkasi"
+      },
+      {
+        "name": "jins",
+        "value": "ayol",
+        "source": "stated",
+        "evidence_uz": "ayollar"
+      },
+      {
+        "name": "tarkib",
+        "value": "paxta",
+        "source": "stated",
+        "evidence_uz": "100% paxta"
+      }
+    ],
+    "dropped": [],
+    "conflicts": [],
+    "model_ok": true,
+    "evidence": {
+      "steps": [
+        {
+          "node": "ROOT",
+          "node_title_uz": "Tovar nomenklaturasi",
+          "attribute": "mahsulot_kategoriyasi",
+          "attribute_label_uz": "Mahsulot toifasi",
+          "value": "kiyim",
+          "target": "XI",
+          "target_title_uz": "To'qimachilik materiallari va ulardan tayyorlangan buyumlar",
+          "why_uz": "Bo'limni tanlaydi — undan keyingi barcha savollar shunga bog'liq.",
+          "citations": [
+            {
+              "note_id": "N_XI_bolim",
+              "ref": "XI bo'lim (50–63-boblar) sarlavhasi",
+              "text": "To'qimachilik materiallari va ulardan tayyorlangan buyumlar.",
+              "status": "unverified"
+            },
+            {
+              "note_id": "N_XVI_bolim",
+              "ref": "XVI bo'lim (84–85-boblar) sarlavhasi",
+              "text": "Mashinalar, uskunalar va mexanizmlar; elektrotexnika jihozlari; ularning qismlari; ovoz yozish va qayta ijro etish apparaturasi, televizion tasvir va ovozni yozish va qayta ijro etish apparaturasi, ularning qismlari va aksessuarlari.",
+              "status": "unverified"
+            }
+          ]
+        }
+      ],
+      "rejections": [
+        {
+          "code": "XVI",
+          "title_uz": "Mashinalar, uskunalar va elektrotexnika jihozlari",
+          "attribute": "mahsulot_kategoriyasi",
+          "required_value": "uskuna",
+          "actual_value": "kiyim",
+          "citations": [
+            {
+              "note_id": "N_XI_bolim",
+              "ref": "XI bo'lim (50–63-boblar) sarlavhasi",
+              "text": "To'qimachilik materiallari va ulardan tayyorlangan buyumlar.",
+              "status": "unverified"
+            },
+            {
+              "note_id": "N_XVI_bolim",
+              "ref": "XVI bo'lim (84–85-boblar) sarlavhasi",
+              "text": "Mashinalar, uskunalar va mexanizmlar; elektrotexnika jihozlari; ularning qismlari; ovoz yozish va qayta ijro etish apparaturasi, televizion tasvir va ovozni yozish va qayta ijro etish apparaturasi, ularning qismlari va aksessuarlari.",
+              "status": "unverified"
+            }
+          ]
+        }
+      ],
+      "has_unverified": true,
+      "unverified_note_ids": [
+        "N_XI_bolim",
+        "N_XVI_bolim"
+      ]
+    },
+    "disclaimer_uz": "Bu javob tavsiya xarakteriga ega va yuridik kuchga ega emas. Yakuniy tasnif javobgarligi deklarantda qoladi. Shubhali holatlarda bojxona organidan dastlabki qaror oling.",
+    "ontology_version": "seed-57n-27izoh-0tasdiq",
+    "data_warning_uz": "Diqqat: javobdagi huquqiy izohlar rasmiy manbadan hali tasdiqlanmagan (sinov ma'lumotlari). Iqtiboslarni rasmiy TN VED nashri bilan solishtiring.",
+    "stopped_at": "XI",
+    "stopped_at_title_uz": "To'qimachilik materiallari va ulardan tayyorlangan buyumlar",
+    "missing_attribute": "mato_turi",
+    "missing_attribute_label_uz": "Matoning ishlab chiqarilish usuli",
+    "reason": "korsatilmagan",
+    "provided_value": null,
+    "question_uz": "Mato trikotajmi yoki to'qimami? Trikotaj — ipning halqalaridan hosil qilingan, cho'ziluvchan (futbolka, sviter mato). To'qima — tayyor matodan tikilgan, cho'zilmaydi (klassik ko'ylak mato).",
+    "hint_uz": "Yetkazib beruvchidan so'rang yoki matoni cho'zib ko'ring. Bu 61-bob va 62-bob o'rtasidagi yagona farq va boj stavkasini belgilaydi.",
+    "why_uz": "61-bob va 62-bob o'rtasidagi yagona farq. Ko'rinishi bir xil kiyim, lekin boj stavkasi va jarima boshqa. Yetkazib beruvchi ko'rsatmasa, aniqlash shart — taxmin qilib bo'lmaydi.",
+    "candidates": [
+      {
+        "branch_value": "trikotaj",
+        "label_uz": "Trikotaj — ip halqalaridan to'qilgan, cho'ziluvchan",
+        "code": "6106 10 000 0",
+        "title_uz": "Ayollar bluzkalari, paxtadan, trikotaj",
+        "is_final": true
+      },
+      {
+        "branch_value": "toqima",
+        "label_uz": "To'qima — tayyor matodan tikilgan, cho'zilmaydi",
+        "code": "6206 30 000 0",
+        "title_uz": "Ayollar bluzkalari, paxtadan, to'qima",
+        "is_final": true
+      }
+    ]
+  },
+  "empty": {
+    "status": "insufficient",
+    "attributes": [],
+    "dropped": [],
+    "conflicts": [],
+    "model_ok": true,
+    "evidence": {
+      "steps": [],
+      "rejections": [],
+      "has_unverified": false,
+      "unverified_note_ids": []
+    },
+    "disclaimer_uz": "Bu javob tavsiya xarakteriga ega va yuridik kuchga ega emas. Yakuniy tasnif javobgarligi deklarantda qoladi. Shubhali holatlarda bojxona organidan dastlabki qaror oling.",
+    "ontology_version": "seed-57n-27izoh-0tasdiq",
+    "data_warning_uz": "Diqqat: javobdagi huquqiy izohlar rasmiy manbadan hali tasdiqlanmagan (sinov ma'lumotlari). Iqtiboslarni rasmiy TN VED nashri bilan solishtiring.",
+    "stopped_at": "ROOT",
+    "stopped_at_title_uz": "Tovar nomenklaturasi",
+    "missing_attribute": "mahsulot_kategoriyasi",
+    "missing_attribute_label_uz": "Mahsulot toifasi",
+    "reason": "korsatilmagan",
+    "provided_value": null,
+    "question_uz": "Bu qanday mahsulot — kiyim-kechakmi yoki elektr/mexanik uskunami?",
+    "hint_uz": "MVP hozircha faqat shu ikki yo'nalishni qamraydi.",
+    "why_uz": "Bo'limni tanlaydi — undan keyingi barcha savollar shunga bog'liq.",
+    "candidates": [
+      {
+        "branch_value": "kiyim",
+        "label_uz": "Kiyim-kechak",
+        "code": "XI",
+        "title_uz": "To'qimachilik materiallari va ulardan tayyorlangan buyumlar",
+        "is_final": false
+      },
+      {
+        "branch_value": "uskuna",
+        "label_uz": "Elektr yoki mexanik uskuna",
+        "code": "XVI",
+        "title_uz": "Mashinalar, uskunalar va elektrotexnika jihozlari",
+        "is_final": false
+      }
+    ]
+  }
+}

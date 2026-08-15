@@ -153,6 +153,25 @@ def test_atribut_qiymatlari_yopiq_royxat(onto):
             )
 
 
+def test_har_bir_qiymat_ozbekcha_yorliqqa_ega(onto):
+    """UI tugmada `koylak_bluzka` emas, odam o'qiydigan matn kerak.
+
+    Yorliqlar ontologiyada turadi: shunda yangi qiymat qo'shilganda
+    uni tarjimasiz qoldirib bo'lmaydi.
+    """
+    for nom, atr in onto.attributes.items():
+        for qiymat in atr.values:
+            assert qiymat in atr.value_labels, f"{nom}.{qiymat}: yorliq yo'q"
+            assert atr.value_labels[qiymat].strip(), f"{nom}.{qiymat}: yorliq bo'sh"
+
+
+def test_ortiqcha_yorliq_yoq(onto):
+    """Yo'q qiymat uchun yorliq — ma'lumot chirishi belgisi."""
+    for nom, atr in onto.attributes.items():
+        ortiqcha = set(atr.value_labels) - set(atr.values)
+        assert not ortiqcha, f"{nom}: ishlatilmagan yorliqlar {sorted(ortiqcha)}"
+
+
 def test_har_bir_atribut_ozbekcha_savolga_ega(onto):
     """Atribut noma'lum bo'lganda foydalanuvchidan nima so'rashni bilishimiz kerak."""
     for nom, atr in onto.attributes.items():
@@ -184,6 +203,34 @@ def test_har_bir_izoh_status_maydoniga_ega(onto):
         assert note.status in ("official", "unverified"), (
             f"{note_id}: status '{note.status}' — 'official' yoki 'unverified' bo'lishi kerak"
         )
+
+
+def test_official_izoh_manba_izisiz_bolmaydi(onto):
+    """⭐ Matnni "tasdiqlangan" deb belgilash uchun manba ko'rsatilishi shart.
+
+    Bu test hozircha bo'sh o'tadi (barcha izohlar `unverified`), lekin
+    aynan o'sha kun uchun yozilgan: kimdir `status: official` qo'yganda,
+    u qayerdan olganini ham yozishga majbur bo'ladi.
+
+    Tasdiqlash tartibi: data/VERIFICATION.md
+    """
+    for note_id, note in onto.notes.items():
+        if note.status == "official":
+            assert note.source_hint.strip(), (
+                f"{note_id}: 'official' deb belgilangan, lekin `source_hint` "
+                f"bo'sh — matn qayerdan olingani ma'lum emas"
+            )
+
+
+def test_tasdiqlash_hujjati_mavjud():
+    """Manba inventarizatsiyasi kod bilan birga saqlanishi kerak."""
+    from pathlib import Path
+
+    from app.ontology import DATA_DIR
+
+    yol = Path(DATA_DIR) / "VERIFICATION.md"
+    assert yol.exists(), "data/VERIFICATION.md yo'q"
+    assert "lex.uz" in yol.read_text(encoding="utf-8")
 
 
 def test_har_bir_izoh_manba_ishorasiga_ega(onto):

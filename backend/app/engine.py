@@ -53,6 +53,7 @@ class Candidate(BaseModel):
     """
 
     branch_value: str
+    label_uz: str  # UI tugmasi uchun: "Trikotaj — ip halqalaridan..."
     code: str
     title_uz: str
     is_final: bool
@@ -156,6 +157,7 @@ def _candidates(
         return []
 
     d = farqlovchilar[0]
+    yorliqlar = onto.attributes[d.attribute].value_labels
     nomzodlar = []
     for tarmoq_qiymati, target in d.branches.items():
         yakuniy, _, _ = _walk(target, atributlar, onto)
@@ -163,6 +165,7 @@ def _candidates(
         nomzodlar.append(
             Candidate(
                 branch_value=tarmoq_qiymati,
+                label_uz=yorliqlar[tarmoq_qiymati],
                 code=n.code,
                 title_uz=n.title_uz,
                 is_final=n.is_final,

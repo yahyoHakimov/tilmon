@@ -1,0 +1,540 @@
+# Oltin to'plam — tizimning xatti-harakati haqidagi shartnoma.
+#
+# `atributlar` — dvigatelga to'g'ridan-to'g'ri beriladi (deterministik test).
+# `kirish`     — haqiqiy foydalanuvchi matni (`-m live` bilan model orqali).
+#
+# Yangi misol qo'shganda: avval bu yerga yozing, keyin o'tkazing.
+# Ayniqsa "jim turishi kerak" misollarini ko'proq qo'shing — ular
+# tizimning eng qimmatli qismini himoya qiladi.
+
+# ═══════════════════════════════════════════════════════════════════════
+#  KOD BERILISHI KERAK — to'qimachilik
+# ═══════════════════════════════════════════════════════════════════════
+
+- id: g001
+  izoh: "Loyihaning asosiy misoli — trikotaj bluzka"
+  kirish: "ayollar bluzkasi, 100% paxta, trikotaj, uzun yeng"
+  atributlar:
+    mahsulot_kategoriyasi: kiyim
+    mato_turi: trikotaj
+    mahsulot_turi: koylak_bluzka
+    jins: ayol
+    tarkib: paxta
+  kutilgan: {status: resolved, code: "6106 10 000 0"}
+
+- id: g002
+  izoh: "Bir xil kiyim, faqat mato to'qima — kod butunlay boshqa"
+  kirish: "ayollar bluzkasi, 100% paxta, to'qima matodan tikilgan"
+  atributlar:
+    mahsulot_kategoriyasi: kiyim
+    mato_turi: toqima
+    mahsulot_turi: koylak_bluzka
+    jins: ayol
+    tarkib: paxta
+  kutilgan: {status: resolved, code: "6206 30 000 0"}
+
+- id: g003
+  izoh: "Trikotaj bluzka, poliester"
+  kirish: "ayollar bluzkasi, 100% poliester, trikotaj"
+  atributlar:
+    mahsulot_kategoriyasi: kiyim
+    mato_turi: trikotaj
+    mahsulot_turi: koylak_bluzka
+    jins: ayol
+    tarkib: kimyoviy_tola
+  kutilgan: {status: resolved, code: "6106 20 000 0"}
+
+- id: g004
+  izoh: "To'qima bluzka, viskoza"
+  kirish: "ayollar bluzkasi, viskoza, to'qima"
+  atributlar:
+    mahsulot_kategoriyasi: kiyim
+    mato_turi: toqima
+    mahsulot_turi: koylak_bluzka
+    jins: ayol
+    tarkib: kimyoviy_tola
+  kutilgan: {status: resolved, code: "6206 40 000 0"}
+
+- id: g005
+  izoh: "To'qima bluzka, ipak"
+  kirish: "ayollar ipak bluzkasi, to'qima mato"
+  atributlar:
+    mahsulot_kategoriyasi: kiyim
+    mato_turi: toqima
+    mahsulot_turi: koylak_bluzka
+    jins: ayol
+    tarkib: ipak
+  kutilgan: {status: resolved, code: "6206 10 000 0"}
+
+- id: g006
+  izoh: "Trikotaj bluzka, jun"
+  kirish: "ayollar jun bluzkasi, trikotaj"
+  atributlar:
+    mahsulot_kategoriyasi: kiyim
+    mato_turi: trikotaj
+    mahsulot_turi: koylak_bluzka
+    jins: ayol
+    tarkib: jun
+  kutilgan: {status: resolved, code: "6106 90 100 0"}
+
+- id: g007
+  izoh: "Erkaklar ko'ylagi, trikotaj — 6105"
+  kirish: "erkaklar ko'ylagi, paxta, trikotaj"
+  atributlar:
+    mahsulot_kategoriyasi: kiyim
+    mato_turi: trikotaj
+    mahsulot_turi: koylak_bluzka
+    jins: erkak
+    tarkib: paxta
+  kutilgan: {status: resolved, code: "6105 10 000 0"}
+
+- id: g008
+  izoh: "Erkaklar ko'ylagi, to'qima — 6205, eng ko'p import qilinadigan"
+  kirish: "erkaklar klassik ko'ylagi, 100% paxta, to'qima"
+  atributlar:
+    mahsulot_kategoriyasi: kiyim
+    mato_turi: toqima
+    mahsulot_turi: koylak_bluzka
+    jins: erkak
+    tarkib: paxta
+  kutilgan: {status: resolved, code: "6205 20 000 0"}
+
+- id: g009
+  izoh: "Erkaklar ko'ylagi, to'qima, sintetik"
+  kirish: "erkaklar ko'ylagi, poliester, to'qima"
+  atributlar:
+    mahsulot_kategoriyasi: kiyim
+    mato_turi: toqima
+    mahsulot_turi: koylak_bluzka
+    jins: erkak
+    tarkib: kimyoviy_tola
+  kutilgan: {status: resolved, code: "6205 30 000 0"}
+
+- id: g010
+  izoh: "Trikotaj ko'ylak, erkak, sintetik"
+  kirish: "erkaklar trikotaj ko'ylagi, akril"
+  atributlar:
+    mahsulot_kategoriyasi: kiyim
+    mato_turi: trikotaj
+    mahsulot_turi: koylak_bluzka
+    jins: erkak
+    tarkib: kimyoviy_tola
+  kutilgan: {status: resolved, code: "6105 20 100 0"}
+
+- id: g011
+  izoh: "Futbolka — ta'rifi bo'yicha trikotaj"
+  kirish: "paxta futbolka, 500 dona"
+  atributlar:
+    mahsulot_kategoriyasi: kiyim
+    mato_turi: trikotaj
+    mahsulot_turi: futbolka
+    tarkib: paxta
+  kutilgan: {status: resolved, code: "6109 10 000 0"}
+
+- id: g012
+  izoh: "Sport futbolkasi, sintetik"
+  kirish: "sport futbolkasi, 100% poliester, trikotaj"
+  atributlar:
+    mahsulot_kategoriyasi: kiyim
+    mato_turi: trikotaj
+    mahsulot_turi: futbolka
+    tarkib: kimyoviy_tola
+  kutilgan: {status: resolved, code: "6109 90 200 0"}
+
+- id: g013
+  izoh: "Jun sviter"
+  kirish: "jun sviter, trikotaj"
+  atributlar:
+    mahsulot_kategoriyasi: kiyim
+    mato_turi: trikotaj
+    mahsulot_turi: sviter
+    tarkib: jun
+  kutilgan: {status: resolved, code: "6110 11 100 0"}
+
+- id: g014
+  izoh: "Paxta kardigan"
+  kirish: "paxta kardigan, trikotaj"
+  atributlar:
+    mahsulot_kategoriyasi: kiyim
+    mato_turi: trikotaj
+    mahsulot_turi: sviter
+    tarkib: paxta
+  kutilgan: {status: resolved, code: "6110 20 100 0"}
+
+- id: g015
+  izoh: "Akril jemper"
+  kirish: "akril jemper, trikotaj"
+  atributlar:
+    mahsulot_kategoriyasi: kiyim
+    mato_turi: trikotaj
+    mahsulot_turi: sviter
+    tarkib: kimyoviy_tola
+  kutilgan: {status: resolved, code: "6110 30 100 0"}
+
+- id: g016
+  izoh: "Erkaklar sport shimi, trikotaj"
+  kirish: "erkaklar sport shimi, paxta, trikotaj"
+  atributlar:
+    mahsulot_kategoriyasi: kiyim
+    mato_turi: trikotaj
+    mahsulot_turi: shim
+    jins: erkak
+    tarkib: paxta
+  kutilgan: {status: resolved, code: "6103 42 000 0"}
+
+- id: g017
+  izoh: "Erkaklar sintetik sport shimi, trikotaj"
+  kirish: "erkaklar sintetik sport shimi, trikotaj"
+  atributlar:
+    mahsulot_kategoriyasi: kiyim
+    mato_turi: trikotaj
+    mahsulot_turi: shim
+    jins: erkak
+    tarkib: kimyoviy_tola
+  kutilgan: {status: resolved, code: "6103 43 000 0"}
+
+- id: g018
+  izoh: "Ayollar leggings, trikotaj"
+  kirish: "ayollar paxta legginsi, trikotaj"
+  atributlar:
+    mahsulot_kategoriyasi: kiyim
+    mato_turi: trikotaj
+    mahsulot_turi: shim
+    jins: ayol
+    tarkib: paxta
+  kutilgan: {status: resolved, code: "6104 62 000 0"}
+
+- id: g019
+  izoh: "Ayollar sintetik shimi, trikotaj"
+  kirish: "ayollar sintetik shimi, trikotaj mato"
+  atributlar:
+    mahsulot_kategoriyasi: kiyim
+    mato_turi: trikotaj
+    mahsulot_turi: shim
+    jins: ayol
+    tarkib: kimyoviy_tola
+  kutilgan: {status: resolved, code: "6104 63 000 0"}
+
+- id: g020
+  izoh: "Erkaklar jinsi shimi — to'qima"
+  kirish: "erkaklar jinsi shimi, 100% paxta, to'qima"
+  atributlar:
+    mahsulot_kategoriyasi: kiyim
+    mato_turi: toqima
+    mahsulot_turi: shim
+    jins: erkak
+    tarkib: paxta
+  kutilgan: {status: resolved, code: "6203 42 000 0"}
+
+- id: g021
+  izoh: "Erkaklar klassik shimi, sintetik, to'qima"
+  kirish: "erkaklar klassik shimi, poliester, to'qima"
+  atributlar:
+    mahsulot_kategoriyasi: kiyim
+    mato_turi: toqima
+    mahsulot_turi: shim
+    jins: erkak
+    tarkib: kimyoviy_tola
+  kutilgan: {status: resolved, code: "6203 43 000 0"}
+
+- id: g022
+  izoh: "Ayollar jinsi shimi, to'qima"
+  kirish: "ayollar jinsi shimi, paxta, to'qima"
+  atributlar:
+    mahsulot_kategoriyasi: kiyim
+    mato_turi: toqima
+    mahsulot_turi: shim
+    jins: ayol
+    tarkib: paxta
+  kutilgan: {status: resolved, code: "6204 62 000 0"}
+
+- id: g023
+  izoh: "Ayollar klassik shimi, sintetik, to'qima"
+  kirish: "ayollar klassik shimi, viskoza, to'qima"
+  atributlar:
+    mahsulot_kategoriyasi: kiyim
+    mato_turi: toqima
+    mahsulot_turi: shim
+    jins: ayol
+    tarkib: kimyoviy_tola
+  kutilgan: {status: resolved, code: "6204 63 000 0"}
+
+# ═══════════════════════════════════════════════════════════════════════
+#  KOD BERILISHI KERAK — elektronika
+# ═══════════════════════════════════════════════════════════════════════
+
+- id: g024
+  izoh: "Smartfon — eng ko'p import qilinadigan tovarlardan"
+  kirish: "Xitoydan 200 dona smartfon olib kelmoqchiman"
+  atributlar:
+    mahsulot_kategoriyasi: uskuna
+    uskuna_turi: telefon
+    telefon_turi: smartfon
+  kutilgan: {status: resolved, code: "8517 13 000 0"}
+
+- id: g025
+  izoh: "Oddiy tugmali uyali telefon — smartfondan boshqa subpozitsiya"
+  kirish: "oddiy tugmali uyali telefon, operatsion tizimsiz"
+  atributlar:
+    mahsulot_kategoriyasi: uskuna
+    uskuna_turi: telefon
+    telefon_turi: boshqa_uyali
+  kutilgan: {status: resolved, code: "8517 14 000 0"}
+
+- id: g026
+  izoh: "Simli statsionar telefon"
+  kirish: "ofis uchun simli statsionar telefon apparati"
+  atributlar:
+    mahsulot_kategoriyasi: uskuna
+    uskuna_turi: telefon
+    telefon_turi: simli
+  kutilgan: {status: resolved, code: "8517 18 000 0"}
+
+- id: g027
+  izoh: "Noutbuk — 10 kg chegarasi ostida"
+  kirish: "noutbuk, massasi 2 kg"
+  atributlar:
+    mahsulot_kategoriyasi: uskuna
+    uskuna_turi: kompyuter
+    kompyuter_turi: portativ
+  kutilgan: {status: resolved, code: "8471 30 000 0"}
+
+- id: g028
+  izoh: "Statsionar kompyuter"
+  kirish: "statsionar kompyuter, sistema bloki"
+  atributlar:
+    mahsulot_kategoriyasi: uskuna
+    uskuna_turi: kompyuter
+    kompyuter_turi: statsionar
+  kutilgan: {status: resolved, code: "8471 41 000 0"}
+
+- id: g029
+  izoh: "Zaryadlovchi — telefonning qismi EMAS, alohida pozitsiya"
+  kirish: "telefon uchun zaryadlovchi qurilma, 20W adapter"
+  atributlar:
+    mahsulot_kategoriyasi: uskuna
+    uskuna_turi: quvvat_manbai
+    quvvat_turi: adapter
+  kutilgan: {status: resolved, code: "8504 40 900 0"}
+
+- id: g030
+  izoh: "Transformator"
+  kirish: "kichik quvvatli transformator, 500 VA"
+  atributlar:
+    mahsulot_kategoriyasi: uskuna
+    uskuna_turi: quvvat_manbai
+    quvvat_turi: transformator
+  kutilgan: {status: resolved, code: "8504 31 210 0"}
+
+- id: g031
+  izoh: "Konnektorli kabel"
+  kirish: "USB kabel, konnektorlari bilan"
+  atributlar:
+    mahsulot_kategoriyasi: uskuna
+    uskuna_turi: kabel
+    kabel_turi: konnektorli
+  kutilgan: {status: resolved, code: "8544 42 900 0"}
+
+- id: g032
+  izoh: "Konnektorsiz kabel — g'altakdagi sim"
+  kirish: "izolyatsiyalangan mis sim, g'altakda, konnektorsiz"
+  atributlar:
+    mahsulot_kategoriyasi: uskuna
+    uskuna_turi: kabel
+    kabel_turi: konnektorsiz
+  kutilgan: {status: resolved, code: "8544 49 910 0"}
+
+# ═══════════════════════════════════════════════════════════════════════
+#  ⭐ JIM TURISHI KERAK — tizimning eng qimmatli qismi
+# ═══════════════════════════════════════════════════════════════════════
+
+- id: s001
+  izoh: "Loyihaning asosiy jim turish misoli — mato turi yo'q"
+  kirish: "ayollar bluzkasi"
+  atributlar:
+    mahsulot_kategoriyasi: kiyim
+    mahsulot_turi: koylak_bluzka
+    jins: ayol
+  kutilgan: {status: insufficient, missing: mato_turi, reason: korsatilmagan}
+
+- id: s002
+  izoh: "Tarkib ma'lum, lekin mato turi hali ham noma'lum"
+  kirish: "ayollar bluzkasi, 100% paxta"
+  atributlar:
+    mahsulot_kategoriyasi: kiyim
+    mahsulot_turi: koylak_bluzka
+    jins: ayol
+    tarkib: paxta
+  kutilgan: {status: insufficient, missing: mato_turi, reason: korsatilmagan}
+
+- id: s003
+  izoh: "Mato ma'lum, lekin kim uchun ekani noma'lum — 6105/6106"
+  kirish: "trikotaj bluzka, paxta"
+  atributlar:
+    mahsulot_kategoriyasi: kiyim
+    mato_turi: trikotaj
+    mahsulot_turi: koylak_bluzka
+    tarkib: paxta
+  kutilgan: {status: insufficient, missing: jins}
+
+- id: s004
+  izoh: "Tarkib ko'rsatilmagan — 10-xonali daraja aniqlanmaydi"
+  kirish: "ayollar trikotaj bluzkasi"
+  atributlar:
+    mahsulot_kategoriyasi: kiyim
+    mato_turi: trikotaj
+    mahsulot_turi: koylak_bluzka
+    jins: ayol
+  kutilgan: {status: insufficient, missing: tarkib}
+
+- id: s005
+  izoh: "Kiyim turi noma'lum"
+  kirish: "trikotaj kiyim, paxta"
+  atributlar:
+    mahsulot_kategoriyasi: kiyim
+    mato_turi: trikotaj
+    tarkib: paxta
+  kutilgan: {status: insufficient, missing: mahsulot_turi}
+
+- id: s006
+  izoh: "Umuman tushunarsiz kiritma"
+  kirish: "Bugun havo juda issiq, salqin joy izlayapman"
+  atributlar: {}
+  kutilgan: {status: insufficient, missing: mahsulot_kategoriyasi}
+
+- id: s007
+  izoh: "Faqat tovar nomi, boshqa hech narsa yo'q"
+  kirish: "kiyim"
+  atributlar:
+    mahsulot_kategoriyasi: kiyim
+  kutilgan: {status: insufficient, missing: mato_turi}
+
+- id: s008
+  izoh: "Erkaklar ko'ylagi, mato turi yo'q — 6105/6205"
+  kirish: "erkaklar ko'ylagi, 100% paxta"
+  atributlar:
+    mahsulot_kategoriyasi: kiyim
+    mahsulot_turi: koylak_bluzka
+    jins: erkak
+    tarkib: paxta
+  kutilgan: {status: insufficient, missing: mato_turi}
+
+- id: s009
+  izoh: "Futbolka, tarkib noma'lum"
+  kirish: "futbolka, 1000 dona"
+  atributlar:
+    mahsulot_kategoriyasi: kiyim
+    mato_turi: trikotaj
+    mahsulot_turi: futbolka
+  kutilgan: {status: insufficient, missing: tarkib}
+
+- id: s010
+  izoh: "Sviter, tarkib noma'lum — jun/paxta/akril uchta boshqa kod"
+  kirish: "sviter, 300 dona"
+  atributlar:
+    mahsulot_kategoriyasi: kiyim
+    mato_turi: trikotaj
+    mahsulot_turi: sviter
+  kutilgan: {status: insufficient, missing: tarkib}
+
+- id: s011
+  izoh: "Shim, mato turi ham jins ham noma'lum"
+  kirish: "shim, paxta"
+  atributlar:
+    mahsulot_kategoriyasi: kiyim
+    mahsulot_turi: shim
+    tarkib: paxta
+  kutilgan: {status: insufficient, missing: mato_turi}
+
+- id: s012
+  izoh: "To'qima shim, jins noma'lum — 6203/6204"
+  kirish: "to'qima shim, paxta"
+  atributlar:
+    mahsulot_kategoriyasi: kiyim
+    mato_turi: toqima
+    mahsulot_turi: shim
+    tarkib: paxta
+  kutilgan: {status: insufficient, missing: jins}
+
+- id: s013
+  izoh: "Ayollar to'qima shimi, tarkib noma'lum"
+  kirish: "ayollar to'qima shimi"
+  atributlar:
+    mahsulot_kategoriyasi: kiyim
+    mato_turi: toqima
+    mahsulot_turi: shim
+    jins: ayol
+  kutilgan: {status: insufficient, missing: tarkib}
+
+- id: s014
+  izoh: "Telefon, lekin qanday telefon ekani noma'lum"
+  kirish: "telefon, 500 dona"
+  atributlar:
+    mahsulot_kategoriyasi: uskuna
+    uskuna_turi: telefon
+  kutilgan: {status: insufficient, missing: telefon_turi}
+
+- id: s015
+  izoh: "Kompyuter, massa noma'lum — 10 kg chegarasi hal qiluvchi"
+  kirish: "kompyuter olib kelmoqchiman"
+  atributlar:
+    mahsulot_kategoriyasi: uskuna
+    uskuna_turi: kompyuter
+  kutilgan: {status: insufficient, missing: kompyuter_turi}
+
+- id: s016
+  izoh: "Kabel, konnektor haqida ma'lumot yo'q"
+  kirish: "elektr kabeli, 1000 metr"
+  atributlar:
+    mahsulot_kategoriyasi: uskuna
+    uskuna_turi: kabel
+  kutilgan: {status: insufficient, missing: kabel_turi}
+
+- id: s017
+  izoh: "Quvvat qurilmasi, turi noma'lum"
+  kirish: "quvvat manbai qurilmasi"
+  atributlar:
+    mahsulot_kategoriyasi: uskuna
+    uskuna_turi: quvvat_manbai
+  kutilgan: {status: insufficient, missing: quvvat_turi}
+
+- id: s018
+  izoh: "Uskuna, lekin qaysi turdagi ekani noma'lum"
+  kirish: "elektron qurilma, Xitoydan"
+  atributlar:
+    mahsulot_kategoriyasi: uskuna
+  kutilgan: {status: insufficient, missing: uskuna_turi}
+
+# --- Ziddiyatli kiritmalar: qiymat bor, lekin bu tarmoqda ma'nosiz --------
+
+- id: s019
+  izoh: "Ziddiyat: futbolka ta'rifi bo'yicha trikotaj, 62-bobda uchramaydi"
+  kirish: "to'qima matodan futbolka"
+  atributlar:
+    mahsulot_kategoriyasi: kiyim
+    mato_turi: toqima
+    mahsulot_turi: futbolka
+    tarkib: paxta
+  kutilgan: {status: insufficient, missing: mahsulot_turi, reason: notanish_qiymat}
+
+- id: s020
+  izoh: "Ziddiyat: sviter ham trikotaj buyum"
+  kirish: "to'qima matodan sviter"
+  atributlar:
+    mahsulot_kategoriyasi: kiyim
+    mato_turi: toqima
+    mahsulot_turi: sviter
+    tarkib: jun
+  kutilgan: {status: insufficient, missing: mahsulot_turi, reason: notanish_qiymat}
+
+- id: s021
+  izoh: "Bo'sh kiritma — hech qanday ma'lumot yo'q"
+  kirish: "salom"
+  atributlar: {}
+  kutilgan: {status: insufficient, missing: mahsulot_kategoriyasi}
+
+- id: s022
+  izoh: "Faqat miqdor ko'rsatilgan, tovar haqida hech narsa yo'q"
+  kirish: "500 dona, Xitoydan, konteynerda"
+  atributlar: {}
+  kutilgan: {status: insufficient, missing: mahsulot_kategoriyasi}

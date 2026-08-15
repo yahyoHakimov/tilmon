@@ -56,8 +56,13 @@ N_61_sarlavha:
 N_61_izoh_1:
   ref: "61-bobga izoh, 1-band"
   status: unverified
+  source_hint: >-
+    GS 61-bobga 1-izoh. Ruscha tahriri: "В данную группу включаются только
+    готовые трикотажные изделия машинного или ручного вязания."
+    Tekshirish: lex.uz ПП-181 (14.05.2025) ilovalari, o'zbek tilida.
   text: >-
-    Ushbu bob faqat tayyor trikotaj buyumlariga nisbatan qo'llaniladi.
+    Ushbu bobga faqat mashinada yoki qo'lda to'qilgan tayyor trikotaj
+    buyumlar kiradi.
 
 N_62_sarlavha:
   ref: "62-bob sarlavhasi"
@@ -68,9 +73,18 @@ N_62_sarlavha:
 N_62_izoh_1:
   ref: "62-bobga izoh, 1-band"
   status: unverified
+  source_hint: >-
+    GS 62-bobga 1-izoh. Ruscha tahriri: "В данную группу включаются предметы
+    одежды мужской, женской или детской, принадлежности к одежде и части
+    одежды или принадлежностей к одежде, изготовленные из материалов
+    (исключая вату, но включая войлок или фетр или нетканые материалы)
+    групп 50–56, 58 и 59."
+    Tekshirish: lex.uz ПП-181 (14.05.2025) ilovalari, o'zbek tilida.
   text: >-
-    Ushbu bob faqat tayyor to'qima matodan tikilgan buyumlarga nisbatan
-    qo'llaniladi va trikotaj buyumlarni qamramaydi.
+    Ushbu bobga 50–56, 58 va 59-boblardagi materiallardan (paxta momig'idan
+    tashqari, lekin kigiz va to'qilmagan materiallarni qo'shgan holda)
+    tayyorlangan erkaklar, ayollar yoki bolalar kiyimi, kiyim aksessuarlari
+    va ularning qismlari kiradi.
 
 N_61_62_izoh_jins:
   ref: "61-bobga izoh, 9-band / 62-bobga izoh, 8-band"
