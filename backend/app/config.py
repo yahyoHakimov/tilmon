@@ -21,6 +21,10 @@ class Settings(BaseSettings):
         env_file=".env", env_file_encoding="utf-8", extra="ignore"
     )
 
+    # "production" bo'lganda ishga tushishdan oldin sozlama tekshiriladi
+    # va xavfsiz bo'lmasa ilova umuman ko'tarilmaydi (app/preflight.py).
+    env: str = Field(default="development", alias="ENV")
+
     database_url: str = Field(
         default="postgresql+psycopg://tilmon:tilmon_dev@127.0.0.1:55432/tilmon",
         alias="DATABASE_URL",

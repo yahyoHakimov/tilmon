@@ -19,6 +19,8 @@ Ikkita muhim qaror:
 
 from __future__ import annotations
 
+import logging
+from contextlib import asynccontextmanager
 from typing import Any
 
 from dotenv import load_dotenv
@@ -37,6 +39,7 @@ from app.evidence import build_evidence
 from app.extractor import LLMClient, extract
 from app.models import User
 from app.ontology import load_ontology
+from app.preflight import tekshir as tekshir_sozlama
 from app.throttle import bloklanganmi, urinish_qayd_et
 
 load_dotenv()
@@ -55,10 +58,26 @@ DATA_WARNING_UZ = (
     "solishtiring."
 )
 
+@asynccontextmanager
+async def _hayot_sikli(_app: FastAPI):
+    """Ishlab chiqarishda xavfsiz bo'lmagan sozlama bilan ko'tarilmaydi.
+
+    `SECURE_COOKIES=0` yoki namunaviy `SESSION_SECRET` jimgina o'tsa,
+    ilova ishlaydi-yu, himoyasi bo'lmaydi. Sekin nosozlik jim
+    nosozlikdan yaxshiroq.
+    """
+    sozlama = get_settings()
+    if sozlama.env == "production":
+        for ogohlantirish in tekshir_sozlama(sozlama):
+            logging.getLogger("tilmon").warning(ogohlantirish)
+    yield
+
+
 app = FastAPI(
     title="Tilmon — TN VED tasniflash",
     description="Asoslangan tasnif. Ma'lumot yetarli bo'lmasa, kod berilmaydi.",
     version="0.1.0",
+    lifespan=_hayot_sikli,
 )
 
 app.add_middleware(
@@ -72,6 +91,7 @@ app.add_middleware(
 
 app.include_router(auth_router)
 app.include_router(admin_router)
+
 
 
 class ClassifyRequest(BaseModel):
