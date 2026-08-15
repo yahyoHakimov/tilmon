@@ -103,7 +103,7 @@ export function Login() {
 }
 
 export function Register() {
-  const { royxat } = useAuth();
+  const { royxat, registrationOpen } = useAuth();
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [parol, setParol] = useState("");
@@ -128,7 +128,11 @@ export function Register() {
   return (
     <Qobiq
       sarlavha="Ro'yxatdan o'tish"
-      tavsif="Tilmon hozircha yopiq betada. Ro'yxatdan o'tish uchun taklif kodi kerak."
+      tavsif={
+        registrationOpen
+          ? "Tilmon beta bosqichida. Javoblar tavsiya xarakteriga ega."
+          : "Tilmon hozircha yopiq betada. Ro'yxatdan o'tish uchun taklif kodi kerak."
+      }
     >
       <form onSubmit={yubor} data-testid="register-form" className="auth-form">
         <Xato matn={xato} />
@@ -156,15 +160,19 @@ export function Register() {
           Kamida 10 ta belgi, ikki xil belgi turi (harf va raqam).
         </div>
 
-        <label htmlFor="kod">Taklif kodi</label>
-        <input
-          id="kod"
-          type="text"
-          placeholder="TILMON-XXXX-XXXX"
-          value={kod}
-          onChange={(e) => setKod(e.target.value.toUpperCase())}
-          required
-        />
+        {!registrationOpen && (
+          <>
+            <label htmlFor="kod">Taklif kodi</label>
+            <input
+              id="kod"
+              type="text"
+              placeholder="TILMON-XXXX-XXXX"
+              value={kod}
+              onChange={(e) => setKod(e.target.value.toUpperCase())}
+              required
+            />
+          </>
+        )}
 
         <button type="submit" disabled={yuborilmoqda}>
           {yuborilmoqda ? "Yuborilmoqda…" : "Ro'yxatdan o'tish"}

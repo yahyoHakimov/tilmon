@@ -44,9 +44,13 @@ const TAMOYILLAR = [
 export function Landing({
   onLogin,
   onRegister,
+  registrationOpen = false,
 }: {
   onLogin: () => void;
   onRegister: () => void;
+  /** Ro'yxat ochiq bo'lsa, sahifa taklif kodi haqida gapirmasligi kerak —
+   *  aks holda u foydalanuvchini ro'yxatdan o'tishdan qaytaradi. */
+  registrationOpen?: boolean;
 }) {
   return (
     <div className="landing">
@@ -73,7 +77,9 @@ export function Landing({
       </header>
 
       <section className="l-hero">
-        <div className="l-pill">TN VED tasniflash · yopiq beta</div>
+        <div className="l-pill">
+          TN VED tasniflash · {registrationOpen ? "beta" : "yopiq beta"}
+        </div>
         <h1>
           Kodni <span className="l-accent">asosi bilan</span> aniqlang
         </h1>
@@ -163,17 +169,25 @@ export function Landing({
             </p>
           </div>
           <div className="l-honest-card" data-testid="beta-notice">
-            <h3>Yopiq beta</h3>
-            <p>
-              Ro'yxatdan o'tish uchun <b>taklif kodi</b> kerak. Ma'lumot
-              tasdiqlangunicha foydalanuvchilar doirasi ataylab cheklangan.
-            </p>
+            <h3>{registrationOpen ? "Beta bosqichi" : "Yopiq beta"}</h3>
+            {registrationOpen ? (
+              <p>
+                Tizim sinov bosqichida. Ro'yxatdan o'ting va o'z tovaringiz
+                bilan sinab ko'ring — natijani rasmiy manba bilan
+                solishtirishni unutmang.
+              </p>
+            ) : (
+              <p>
+                Ro'yxatdan o'tish uchun <b>taklif kodi</b> kerak. Ma'lumot
+                tasdiqlangunicha foydalanuvchilar doirasi ataylab cheklangan.
+              </p>
+            )}
           </div>
         </div>
       </section>
 
       <section className="l-cta">
-        <h2>Taklif kodingiz bormi?</h2>
+        <h2>{registrationOpen ? "Sinab ko'rasizmi?" : "Taklif kodingiz bormi?"}</h2>
         <p>Ro'yxatdan o'ting va o'z tovaringiz bilan sinab ko'ring.</p>
         <div className="l-cta-row">
           <button type="button" className="l-btn l-btn-lg" onClick={onRegister}>

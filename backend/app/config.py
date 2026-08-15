@@ -52,6 +52,13 @@ class Settings(BaseSettings):
     openai_api_key: str = Field(default="", alias="OPENAI_API_KEY")
     openai_model: str = Field(default="gpt-4o-mini", alias="OPENAI_MODEL")
 
+    # Ro'yxatdan o'tish taklif kodisiz mumkinmi.
+    #
+    # Sukut bo'yicha YOPIQ va shunday qolishi kerak: yangi muhitda
+    # (yangi server, yangi ishlab chiquvchi) ro'yxat tasodifan ochiq
+    # qolmasligi uchun uni ataylab yoqish talab qilinadi.
+    registration_open: bool = Field(default=False, alias="REGISTRATION_OPEN")
+
     # Bir foydalanuvchi uchun soatiga nechta tasnif so'rovi.
     # OpenAI xarajatini nazorat qiladi.
     rate_limit_hourly: int = Field(default=120, alias="RATE_LIMIT_HOURLY")

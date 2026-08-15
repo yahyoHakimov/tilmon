@@ -128,7 +128,20 @@ def admin_talab(user: User = Depends(joriy_foydalanuvchi)) -> User:
 class RegisterRequest(BaseModel):
     email: EmailStr
     password: str = Field(min_length=1, max_length=500)
-    invite_code: str = Field(min_length=1, max_length=64)
+    # Yopiq rejimda majburiy, ochiq rejimda ixtiyoriy. Majburiylik
+    # sxemada emas, endpoint ichida tekshiriladi — chunki u sozlamaga
+    # bog'liq va sxema sozlamani ko'rmaydi.
+    invite_code: str | None = Field(default=None, max_length=64)
+
+
+@router.get("/config")
+def config() -> dict:
+    """Frontend ro'yxat ochiq-yopiqligini bilishi kerak.
+
+    Kirishsiz ochiq endpoint — shuning uchun unda faqat shu bitta
+    bayroq bo'ladi, boshqa hech qanday sozlama emas.
+    """
+    return {"registration_open": get_settings().registration_open}
 
 
 @router.post("/register", status_code=status.HTTP_201_CREATED)
@@ -145,13 +158,26 @@ def register(
     yo'q qilib yuborardi.
     """
     email = sorov.email.strip().lower()
+    berilgan_kod = (sorov.invite_code or "").strip()
+    ochiq = get_settings().registration_open
 
-    try:
-        kod = kodni_tekshir(db, sorov.invite_code)
-    except KodYaroqsiz as xato:
+    if not berilgan_kod and not ochiq:
         raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST, detail=str(xato)
-        ) from xato
+            status_code=422,
+            detail="Ro'yxatdan o'tish uchun taklif kodi kerak.",
+        )
+
+    # Ochiq rejimda ham kod KIRITILGAN bo'lsa, u haqiqiy bo'lishi kerak.
+    # Aks holda foydalanuvchi "kodim ishladi" deb o'ylaydi, aslida esa
+    # kod umuman o'qilmagan bo'lardi.
+    kod = None
+    if berilgan_kod:
+        try:
+            kod = kodni_tekshir(db, berilgan_kod)
+        except KodYaroqsiz as xato:
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST, detail=str(xato)
+            ) from xato
 
     bor = db.execute(select(User).where(User.email == email)).scalar_one_or_none()
     if bor is not None:
@@ -171,7 +197,8 @@ def register(
     db.add(u)
     db.flush()
 
-    kodni_sarfla(kod, u.id)
+    if kod is not None:
+        kodni_sarfla(kod, u.id)
 
     u.last_login_at = datetime.now(UTC)
     token = sessiya_yarat(

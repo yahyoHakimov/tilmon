@@ -267,3 +267,56 @@ describe("chiqish", () => {
     );
   });
 });
+
+// --- Ro'yxat ochiq rejimi ---------------------------------------------------
+
+describe("ochiq ro'yxat", () => {
+  it("yopiq rejimda taklif kodi maydoni majburiy", async () => {
+    fetchni_soxtalashtir({
+      "GET /api/auth/me": () => javob(401),
+      "GET /api/auth/config": () => javob(200, { registration_open: false }),
+    });
+    chiqar("/royxat");
+    await waitFor(() => screen.getByTestId("register-form"));
+    expect(screen.getByLabelText(/taklif kodi/i)).toBeRequired();
+  });
+
+  it("⭐ ochiq rejimda taklif kodi maydoni YO'Q", async () => {
+    fetchni_soxtalashtir({
+      "GET /api/auth/me": () => javob(401),
+      "GET /api/auth/config": () => javob(200, { registration_open: true }),
+    });
+    chiqar("/royxat");
+    await waitFor(() => screen.getByTestId("register-form"));
+    await waitFor(() =>
+      expect(screen.queryByLabelText(/taklif kodi/i)).toBeNull(),
+    );
+  });
+
+  it("ochiq rejimda kodsiz ro'yxatdan o'tadi", async () => {
+    let kirgan = false;
+    const yuborilgan: unknown[] = [];
+    const mock = vi.fn(async (url: string, init?: RequestInit) => {
+      if (url === "/api/auth/config") return javob(200, { registration_open: true });
+      if (url === "/api/auth/me") return kirgan ? javob(200, FOYDALANUVCHI) : javob(401);
+      if (url === "/api/auth/register") {
+        yuborilgan.push(JSON.parse(String(init?.body)));
+        kirgan = true;
+        return javob(201, FOYDALANUVCHI);
+      }
+      throw new Error(`kutilmagan: ${url}`);
+    });
+    vi.stubGlobal("fetch", mock);
+
+    chiqar("/royxat");
+    await waitFor(() => screen.getByTestId("register-form"));
+    await userEvent.type(screen.getByLabelText(/email/i), "a@b.uz");
+    await userEvent.type(screen.getByLabelText(/^parol/i), "Bluzka-6106-trikotaj");
+    await userEvent.click(screen.getByRole("button", { name: /Ro'yxatdan o'tish/ }));
+
+    await waitFor(() =>
+      expect(screen.getByTestId("classify-form")).toBeInTheDocument(),
+    );
+    expect(yuborilgan[0]).toMatchObject({ email: "a@b.uz" });
+  });
+});

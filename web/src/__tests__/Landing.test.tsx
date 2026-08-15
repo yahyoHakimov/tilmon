@@ -117,3 +117,27 @@ describe("kirish va ro'yxat", () => {
     expect(screen.getByTestId("beta-notice")).toHaveTextContent(/taklif kodi/i);
   });
 });
+
+// --- Ro'yxat ochiq/yopiq holati ---------------------------------------------
+
+describe("ro'yxat holati", () => {
+  it("yopiq rejimda taklif kodi talab qilinishini aytadi", () => {
+    render(<Landing onLogin={() => {}} onRegister={() => {}} registrationOpen={false} />);
+    expect(screen.getByTestId("beta-notice")).toHaveTextContent(/taklif kodi/i);
+  });
+
+  it("⭐ ochiq rejimda taklif kodi haqida GAPIRMAYDI", () => {
+    /**
+     * Sahifa yolg'on gapirmasligi kerak: ro'yxat ochiq bo'lsa,
+     * "taklif kodi kerak" degan matn foydalanuvchini adashtiradi
+     * va ro'yxatdan o'tishdan qaytaradi.
+     */
+    render(<Landing onLogin={() => {}} onRegister={() => {}} registrationOpen />);
+    expect(screen.getByTestId("beta-notice")).not.toHaveTextContent(/taklif kodi/i);
+  });
+
+  it("ochiq rejimda ham beta ekanini aytadi", () => {
+    render(<Landing onLogin={() => {}} onRegister={() => {}} registrationOpen />);
+    expect(screen.getByTestId("beta-notice")).toHaveTextContent(/beta/i);
+  });
+});

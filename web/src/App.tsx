@@ -84,7 +84,7 @@ function Sarlavha() {
 }
 
 function LandingYokiIlova() {
-  const { user, yuklandi } = useAuth();
+  const { user, yuklandi, registrationOpen } = useAuth();
   const navigate = useNavigate();
 
   if (!yuklandi) return <Yuklanmoqda />;
@@ -95,6 +95,7 @@ function LandingYokiIlova() {
     <Landing
       onLogin={() => navigate("/kirish")}
       onRegister={() => navigate("/royxat")}
+      registrationOpen={registrationOpen}
     />
   );
 }

@@ -26,6 +26,8 @@ export interface Foydalanuvchi {
 
 interface AuthHolati {
   user: Foydalanuvchi | null;
+  /** Ro'yxatdan o'tish taklif kodisiz mumkinmi (serverdan). */
+  registrationOpen: boolean;
   /** Boshlang'ich tekshiruv tugadimi. Tugamaguncha hech narsa ko'rsatilmaydi. */
   yuklandi: boolean;
   kir: (email: string, parol: string) => Promise<void>;
@@ -61,6 +63,9 @@ async function post(yol: string, tana: unknown): Promise<Response> {
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<Foydalanuvchi | null>(null);
   const [yuklandi, setYuklandi] = useState(false);
+  // Sukut bo'yicha YOPIQ: server javob bermaguncha taklif kodi
+  // so'raladi. Aks holda maydon bir lahza yo'qolib, keyin paydo bo'ladi.
+  const [registrationOpen, setRegistrationOpen] = useState(false);
 
   const yangila = useCallback(async () => {
     try {
@@ -76,6 +81,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     void yangila();
   }, [yangila]);
+
+  useEffect(() => {
+    fetch("/api/auth/config")
+      .then((r) => (r.ok ? r.json() : null))
+      .then((b) => setRegistrationOpen(Boolean(b?.registration_open)))
+      .catch(() => setRegistrationOpen(false));
+  }, []);
 
   const kir = useCallback(
     async (email: string, parol: string) => {
@@ -93,7 +105,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       const r = await post("/api/auth/register", {
         email,
         password: parol,
-        invite_code: kod,
+        // Bo'sh kod yuborilmaydi: ochiq rejimda u ixtiyoriy, yopiq
+        // rejimda esa server aniq xato beradi.
+        ...(kod.trim() ? { invite_code: kod.trim() } : {}),
       });
       if (!r.ok) {
         throw new Error(
@@ -111,7 +125,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, [yangila]);
 
   return (
-    <Kontekst.Provider value={{ user, yuklandi, kir, royxat, chiq }}>
+    <Kontekst.Provider
+      value={{ user, yuklandi, registrationOpen, kir, royxat, chiq }}
+    >
       {children}
     </Kontekst.Provider>
   );
