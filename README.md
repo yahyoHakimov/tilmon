@@ -234,8 +234,9 @@ testi baribir ishlaydi** — tasnif mantiqi infratuzilmaga bog'liq emas.
 | Kirish API | 31 | Xato javoblari ma'lumot oshkor qilmasligi |
 | Ro'yxat | 28 | Taklif kodi bir marta ishlashi |
 | Huquqlar | 24 | Himoyalanmagan endpoint qolmasligi |
-| **Backend jami** | **387** | (+60 `live`) |
-| Web UI | 61 | Kod javob sifatida ko'rsatilmasligi; auth marshrutlari |
+| Deploy tekshiruvi | 16 | Xavfsiz bo'lmagan sozlama bilan ishga tushmaslik |
+| **Backend jami** | **403** | (+60 `live`) |
+| Web UI | 74 | Kod javob sifatida ko'rsatilmasligi; demo ham jim turishi |
 
 ### Mutatsiya sinovi
 
@@ -295,6 +296,25 @@ web/
   src/__tests__/
     fixtures.json    Backend'dan generatsiya qilinadi (kontraktdan ajralmaydi)
 ```
+
+## Ishlab chiqarishga chiqarish
+
+Bitta VPS: nginx + systemd + Postgres, Docker'siz. To'liq qo'llanma:
+**[`deploy/README.md`](deploy/README.md)**
+
+```bash
+# Bir marta — serverni sozlaydi
+ssh root@<IP> 'bash /tmp/deploy/bootstrap.sh tilmon.uz'
+
+# Har safar — testlar → build → rsync → migratsiya → restart
+./deploy/deploy.sh tilmon.uz
+```
+
+`ENV=production` da ilova **xavfsiz bo'lmagan sozlama bilan ko'tarilmaydi**:
+`SECURE_COOKIES=0`, bo'sh yoki namunaviy `SESSION_SECRET`, `.env.example`
+dagi baza paroli, `localhost` yoki `*` origin — har biri ishga tushishni
+to'xtatadi va nima qilish kerakligini aytadi. Sekin nosozlik jim
+nosozlikdan yaxshiroq.
 
 ## Keyingi qadamlar
 
